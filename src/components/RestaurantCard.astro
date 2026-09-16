@@ -29,7 +29,7 @@ const searchHay = [r.brand, r.branch ?? "", ...r.dishes.map((d) => d.name), ...r
       <h3 class="rc-name">
         <a href={detailPath(r)}>{r.brand}{r.branch && <span class="rc-branch"> · {r.branch}</span>}</a>
       </h3>
-      <span class:list={["tag", r.recommendationLevel === "wubiChi" ? "tag--wubi" : r.recommendationLevel === "yingChiBang" ? "tag--fill" : ""]}>
+      <span class:list={["tag", { "tag--wubi": r.recommendationLevel === "wubiChi", "tag--fill": r.recommendationLevel === "yingChiBang", "tag--dai": r.recommendationLevel === "daiChi" }]}>
         {LEVEL_LABEL[r.recommendationLevel]}
       </span>
     </div>

@@ -159,7 +159,7 @@ function initMap(app: HTMLElement) {
         const vis = [...markers.values()].filter((m) => m.marker.getMap()).map((m) => m.marker);
         if (vis.length) map.setFitView(vis, false, [30, 30, 30, 30]);
       });
-      panel.appendChild(reset);
+      panel!.appendChild(reset); // 顶部已 `if (!panel) return`，异步闭包内 TS 未保留收窄
 
       // 筛选同步：被筛掉的卡片对应 marker 移除；当前选中被筛掉则关信息窗
       const syncMarkers = () => {

@@ -67,6 +67,7 @@ html, body { overflow-x: clip; }
 }
 .tag--fill { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .tag--wubi { background: var(--level-wubi); border-color: var(--level-wubi); color: #fff; }
+.tag--dai { background: #fbf1e2; border-color: #e6c48f; color: #9a5a12; } /* 待吃：暖橙描边 */
 
 /* 发丝线卡片（无阴影堆叠） */
 .card {

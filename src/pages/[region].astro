@@ -1,7 +1,7 @@
 ---
 import Layout from "../components/Layout.astro";
 import RestaurantCard from "../components/RestaurantCard.astro";
-import { REGION_ORDER, regionName, byRegion, fmtVisited } from "../lib/food-data";
+import { REGION_ORDER, regionName, byRegion, isEaten, fmtVisited } from "../lib/food-data";
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -11,7 +11,12 @@ export function getStaticPaths() {
 const { region } = Astro.params;
 const name = regionName(region);
 const list = byRegion(region);
+const eatenCount = list.filter(isEaten).length;
+const waitCount = list.length - eatenCount;
 const withCoords = list.filter((r) => r.lng !== null).length;
+const subLine = eatenCount > 0
+  ? `${eatenCount} 家本人实吃${waitCount > 0 ? ` · ${waitCount} 家待吃` : ""}`
+  : waitCount > 0 ? `暂无实吃 · ${waitCount} 家待吃` : "这个地区还没有记录";
 
 // 高德凭据：优先 gitignore 的本地配置，其次 CI 注入的环境变量。缺失则地图降级（不阻塞列表）。
 function amapCfg() {
@@ -33,12 +38,13 @@ const LEVELS = [
   { key: "wubiChi", label: "务必吃" },
   { key: "yingChiBang", label: "应吃榜" },
   { key: "keyiChi", label: "可以吃" },
+  ...(waitCount > 0 ? [{ key: "daiChi", label: "待吃" }] : []),
 ] as const;
 ---
 <Layout title={`${name} · 大吃特吃`} description={`${name}的本人实吃记录。`}>
   <div class="page page-inner city-head">
     <h1 class="display city-title">{name}</h1>
-    <p class="city-sub">{list.length > 0 ? `${list.length} 家本人实吃` : "这个地区还没有实吃记录"}</p>
+    <p class="city-sub">{subLine}</p>
   </div>
 
   {list.length === 0 ? (

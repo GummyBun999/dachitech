@@ -2,12 +2,13 @@
 import Layout from "../components/Layout.astro";
 import RestaurantCard from "../components/RestaurantCard.astro";
 import {
-  REGION_ORDER, regionName, regionCount, regionPath,
-  recentEats, mustEats, topList, restaurants, lastUpdated, fmtVisited,
+  REGION_ORDER, regionName, regionCount, regionWait, regionPath,
+  recentEats, mustEats, topList, waitList, restaurants, isEaten, lastUpdated, fmtVisited,
 } from "../lib/food-data";
 
 const updated = lastUpdated();
-const latest = [...restaurants].sort((a, b) => b.contentUpdatedAt.localeCompare(a.contentUpdatedAt)).slice(0, 6);
+const eaten = restaurants.filter(isEaten);
+const latest = [...eaten].sort((a, b) => b.contentUpdatedAt.localeCompare(a.contentUpdatedAt)).slice(0, 6);
 ---
 <Layout>
   {/* 品牌海报块：fal 展示语域，首尾同色闭环 */}
@@ -26,7 +27,7 @@ const latest = [...restaurants].sort((a, b) => b.contentUpdatedAt.localeCompare(
       {REGION_ORDER.map((s) => (
         <a class="region-entry" href={regionPath(s)}>
           <span class="region-name">{regionName(s)}</span>
-          <span class="num region-count">{regionCount(s)} 家</span>
+          <span class="num region-count">{regionCount(s)} 家{regionWait(s) > 0 && <span class="region-wait"> · {regionWait(s)} 待吃</span>}</span>
         </a>
       ))}
     </div>
@@ -54,10 +55,18 @@ const latest = [...restaurants].sort((a, b) => b.contentUpdatedAt.localeCompare(
     </section>
   )}
 
+  {/* 待吃：计划吃、还没吃（无实吃证据，单独一档） */}
+  {waitList.length > 0 && (
+    <section class="page page-inner block">
+      <h2 class="section-title">待吃 <span class="block-sub">计划吃，还没吃</span></h2>
+      <div class="card-grid">{waitList.map((r) => <RestaurantCard r={r} />)}</div>
+    </section>
+  )}
+
   {/* 最新收录（有数据时的真实内容） */}
   {latest.length > 0 && (
     <section class="page page-inner block">
-      <h2 class="section-title">收录 {restaurants.length} 家</h2>
+      <h2 class="section-title">收录 {eaten.length} 家</h2>
       <div class="card-grid">{latest.map((r) => <RestaurantCard r={r} />)}</div>
     </section>
   )}
@@ -87,6 +96,8 @@ const latest = [...restaurants].sort((a, b) => b.contentUpdatedAt.localeCompare(
   .region-entry:hover { text-decoration: none; background: var(--brand-soft); }
   .region-name { font-size: var(--fs-shop); font-weight: 600; letter-spacing: var(--ls-text); }
   .region-count { color: var(--ink-2); font-size: var(--fs-sub); }
+  .region-wait { color: #9a5a12; }
+  .block-sub { font-size: var(--fs-sub); font-weight: 500; color: var(--ink-3); letter-spacing: 0; }
   .card-grid { display: grid; grid-template-columns: 1fr; gap: var(--s-4); }
   @media (min-width: 768px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 1024px) { .card-grid { grid-template-columns: repeat(3, 1fr); } }

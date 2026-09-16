@@ -9,7 +9,7 @@ export interface PubRestaurant {
   brand: string; branch: string | null; category: string | null; cuisineTags: string[];
   reviewText: string; dishes: PubDish[];
   score10: number | null; scoreScope: "restaurant" | "none";
-  recommendationLevel: "wubiChi" | "yingChiBang" | "keyiChi";
+  recommendationLevel: "wubiChi" | "yingChiBang" | "keyiChi" | "daiChi";
   visitedAt: string | null; visitedAtPrecision: "day" | "month" | null;
   inRecent: boolean; multiShop: boolean; amapQuery: string;
   lng: number | null; lat: number | null; coordSystem: string | null; poiConfidence: string | null;
@@ -29,19 +29,28 @@ export const restaurants = data.restaurants;
 export const REGION_ORDER = ["shenzhen", "zhongshan", "chongqing", "guangzhou", "japan", "singapore", "thailand"] as const;
 export const regionName = (slug: string) => data.regions.find((r) => r.slug === slug)?.name ?? slug;
 export const regionCount = (slug: string) => data.regions.find((r) => r.slug === slug)?.count ?? 0;
+export const regionWait = (slug: string) => (data.regions.find((r) => r.slug === slug) as any)?.wait ?? 0;
 export const byRegion = (slug: string) => restaurants.filter((r) => r.regionSlug === slug);
+export const eatenByRegion = (slug: string) => byRegion(slug).filter(isEaten);
+export const waitByRegion = (slug: string) => byRegion(slug).filter((r) => r.recommendationLevel === "daiChi");
 
 /** 推荐用语只允许这四个（DEVELOPMENT-PLAN §1） */
 export const LEVEL_LABEL: Record<PubRestaurant["recommendationLevel"], string> = {
   wubiChi: "务必吃",
   yingChiBang: "应吃榜",
   keyiChi: "可以吃",
+  daiChi: "待吃",
 };
+
+/** 实吃档（本人实吃记录，用于「本人实吃」计数，排除待吃） */
+export const EATEN_LEVELS = ["wubiChi", "yingChiBang", "keyiChi"] as const;
+export const isEaten = (r: PubRestaurant) => r.recommendationLevel !== "daiChi";
 
 /** 最近吃了（Q3：120 天窗口内，构建时已按保守月精度判定） */
 export const recentEats = restaurants.filter((r) => r.inRecent);
 export const mustEats = restaurants.filter((r) => r.recommendationLevel === "wubiChi");
 export const topList = restaurants.filter((r) => r.recommendationLevel === "yingChiBang");
+export const waitList = restaurants.filter((r) => r.recommendationLevel === "daiChi");
 
 /** 展示日期：月精度展示 YYYY.MM，不伪造具体日 */
 export function fmtVisited(r: PubRestaurant): string | null {
