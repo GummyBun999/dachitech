@@ -13,6 +13,7 @@ export interface PubRestaurant {
   visitedAt: string | null; visitedAtPrecision: "day" | "month" | null;
   inRecent: boolean; multiShop: boolean; amapQuery: string;
   lng: number | null; lat: number | null; coordSystem: string | null; poiConfidence: string | null;
+  closed: boolean;
   contentUpdatedAt: string; coverImage: string | null;
 }
 
@@ -46,11 +47,12 @@ export const LEVEL_LABEL: Record<PubRestaurant["recommendationLevel"], string> =
 export const EATEN_LEVELS = ["wubiChi", "yingChiBang", "keyiChi"] as const;
 export const isEaten = (r: PubRestaurant) => r.recommendationLevel !== "daiChi";
 
-/** 最近吃了（Q3：120 天窗口内，构建时已按保守月精度判定） */
-export const recentEats = restaurants.filter((r) => r.inRecent);
-export const mustEats = restaurants.filter((r) => r.recommendationLevel === "wubiChi");
-export const topList = restaurants.filter((r) => r.recommendationLevel === "yingChiBang");
-export const waitList = restaurants.filter((r) => r.recommendationLevel === "daiChi");
+/** 推荐榜单一律排除关店店（关店不进任何推荐块，只在地区页置灰置底） */
+const open = (r: PubRestaurant) => !r.closed;
+export const recentEats = restaurants.filter((r) => r.inRecent && open(r));
+export const mustEats = restaurants.filter((r) => r.recommendationLevel === "wubiChi" && open(r));
+export const topList = restaurants.filter((r) => r.recommendationLevel === "yingChiBang" && open(r));
+export const waitList = restaurants.filter((r) => r.recommendationLevel === "daiChi" && open(r));
 
 /** 展示日期：月精度展示 YYYY.MM，不伪造具体日 */
 export function fmtVisited(r: PubRestaurant): string | null {

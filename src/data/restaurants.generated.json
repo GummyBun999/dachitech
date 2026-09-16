@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-16T07:25:34.515Z",
+  "generatedAt": "2026-09-16T07:42:11.406Z",
   "policyVersion": "2026-09-16",
   "recentWindowDays": 120,
   "regions": [
     {
       "slug": "shenzhen",
       "name": "深圳",
-      "count": 43,
+      "count": 45,
       "wait": 0
     },
     {
@@ -77,39 +77,7 @@
       "lat": 22.521297,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
-      "contentUpdatedAt": "2026-07-13",
-      "coverImage": null
-    },
-    {
-      "id": "r_8ceb0126",
-      "slug": "荷利炸物-宝安店",
-      "regionSlug": "shenzhen",
-      "actualCity": "深圳",
-      "brand": "荷利炸物",
-      "branch": "宝安店",
-      "category": null,
-      "cuisineTags": [
-        "日料"
-      ],
-      "reviewText": "8",
-      "dishes": [
-        {
-          "name": "日式炸牛排 / 乌冬面",
-          "score10": null
-        }
-      ],
-      "score10": 8,
-      "scoreScope": "restaurant",
-      "recommendationLevel": "wubiChi",
-      "visitedAt": "2026-05-09",
-      "visitedAtPrecision": "day",
-      "inRecent": false,
-      "multiShop": false,
-      "amapQuery": "%E8%8D%B7%E5%88%A9%E7%82%B8%E7%89%A9%20%E6%B7%B1%E5%9C%B3%20%E5%AE%9D%E5%AE%89%E5%BA%97",
-      "lng": null,
-      "lat": null,
-      "coordSystem": null,
-      "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-07-13",
       "coverImage": null
     },
@@ -143,6 +111,7 @@
       "lat": 22.536315,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
+      "closed": false,
       "contentUpdatedAt": "2026-07-13",
       "coverImage": null
     },
@@ -176,6 +145,7 @@
       "lat": 22.552912,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
+      "closed": false,
       "contentUpdatedAt": "2026-07-13",
       "coverImage": null
     },
@@ -209,6 +179,7 @@
       "lat": 22.517659,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
+      "closed": false,
       "contentUpdatedAt": "2026-07-08",
       "coverImage": null
     },
@@ -242,6 +213,7 @@
       "lat": 22.527642,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
+      "closed": false,
       "contentUpdatedAt": "2026-07-08",
       "coverImage": null
     },
@@ -276,6 +248,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -310,6 +283,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -344,6 +318,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -372,6 +347,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -406,6 +382,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -440,6 +417,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -474,6 +452,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -502,6 +481,7 @@
       "lat": 22.536315,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -530,6 +510,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -564,6 +545,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -598,6 +580,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -632,6 +615,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -666,6 +650,7 @@
       "lat": 22.527952,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -694,6 +679,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -722,6 +708,7 @@
       "lat": 22.569125,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -756,6 +743,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -790,6 +778,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -824,6 +813,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -858,6 +848,7 @@
       "lat": 29.577724,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -892,6 +883,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -926,6 +918,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -959,6 +952,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -993,6 +987,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -1021,6 +1016,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -1055,6 +1051,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -1089,6 +1086,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -1123,6 +1121,7 @@
       "lat": 22.548775,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -1151,6 +1150,7 @@
       "lat": 23.003281,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -1185,6 +1185,7 @@
       "lat": 22.528283,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -1219,6 +1220,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -1247,6 +1249,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -1275,6 +1278,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -1303,6 +1307,7 @@
       "lat": 22.539963,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -1337,6 +1342,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -1365,6 +1371,7 @@
       "lat": 22.521433,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -1399,6 +1406,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -1427,6 +1435,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -1465,6 +1474,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -1499,6 +1509,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -1527,6 +1538,7 @@
       "lat": 22.528232,
       "coordSystem": "GCJ02",
       "poiConfidence": "medium",
+      "closed": false,
       "contentUpdatedAt": "2026-03-02",
       "coverImage": null
     },
@@ -1561,6 +1573,111 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_8ceb0126",
+      "slug": "荷利炸物-宝安店",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "荷利炸物",
+      "branch": "宝安店",
+      "category": null,
+      "cuisineTags": [
+        "日料"
+      ],
+      "reviewText": "8",
+      "dishes": [
+        {
+          "name": "日式炸牛排 / 乌冬面",
+          "score10": null
+        }
+      ],
+      "score10": 8,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "yingChiBang",
+      "visitedAt": "2026-05-09",
+      "visitedAtPrecision": "day",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E8%8D%B7%E5%88%A9%E7%82%B8%E7%89%A9%20%E6%B7%B1%E5%9C%B3%20%E5%AE%9D%E5%AE%89%E5%BA%97",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": true,
+      "contentUpdatedAt": "2026-07-13",
+      "coverImage": null
+    },
+    {
+      "id": "r_1715068a",
+      "slug": "森someFusion-宝安",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "森some Fusion",
+      "branch": "宝安",
+      "category": "饭店",
+      "cuisineTags": [
+        "白人饭"
+      ],
+      "reviewText": "黑松露炒饭很有水平  xxm: 菠萝炒安格斯牛肉good",
+      "dishes": [
+        {
+          "name": "黑松露炒饭",
+          "review": "黑松露炒饭很有水平  xxm: 菠萝炒安格斯牛肉good",
+          "score10": 9.6
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E6%A3%AEsome%20Fusion%20%E6%B7%B1%E5%9C%B3%20%E5%AE%9D%E5%AE%89",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": true,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_7b992876",
+      "slug": "Soi22Bis-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "Soi 22 Bis",
+      "branch": "南山",
+      "category": "饭店",
+      "cuisineTags": [
+        "墨西哥菜"
+      ],
+      "reviewText": "牛肋条好吃 性价比扣分 属于是环境比较上海的门店",
+      "dishes": [
+        {
+          "name": "牛肋条",
+          "review": "牛肋条好吃 性价比扣分 属于是环境比较上海的门店",
+          "score10": 9.2
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "Soi%2022%20Bis%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": true,
       "contentUpdatedAt": "2026-03-16",
       "coverImage": null
     },
@@ -1589,6 +1706,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-09-16",
       "coverImage": null
     },
@@ -1618,6 +1736,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-09-16",
       "coverImage": null
     },
@@ -1647,6 +1766,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-09-16",
       "coverImage": null
     },
@@ -1675,6 +1795,7 @@
       "lat": null,
       "coordSystem": null,
       "poiConfidence": null,
+      "closed": false,
       "contentUpdatedAt": "2026-09-16",
       "coverImage": null
     }

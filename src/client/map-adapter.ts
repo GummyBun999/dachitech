@@ -87,6 +87,8 @@ function initMap(app: HTMLElement) {
   const markers = new Map<string, { marker: any; el: HTMLElement }>();
   let selecting = false; // 事件来源标记：防 marker↔card 递归
   let activeId: string | null = null;
+  // PC（有精确指针且支持 hover）：marker 悬停即预览；移动端不加 hover（用户要求不改）
+  const hoverCapable = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   const LEVEL_CN: Record<string, string> = { wubiChi: "务必吃", yingChiBang: "应吃榜", keyiChi: "可以吃", daiChi: "待吃" };
 
@@ -142,6 +144,8 @@ function initMap(app: HTMLElement) {
         // 自定义 content 的 marker，AMap 不自动绑点击 → 直接在元素上绑（并阻止冒泡到地图 click 关窗）
         el.addEventListener("click", (ev) => { ev.stopPropagation(); selectPoint(p, true); });
         marker.on("click", () => selectPoint(p, true));
+        // PC 悬停预览：只开信息窗 + 高亮，不滚动卡片（避免每次 hover 抖动）
+        if (hoverCapable) el.addEventListener("mouseenter", () => { if (!selecting) { highlight(p.id); openInfo(p); } });
         markers.set(p.id, { marker, el });
         all.push(marker);
       }

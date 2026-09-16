@@ -27,9 +27,11 @@ const title = `${r.brand}${r.branch ? " · " + r.branch : ""}`;
     <header class="d-head">
       <h1 class="d-name">{r.brand}{r.branch && <span class="d-branch"> · {r.branch}</span>}</h1>
       <div class="d-tags">
-        <span class:list={["tag", { "tag--wubi": r.recommendationLevel === "wubiChi", "tag--fill": r.recommendationLevel === "yingChiBang", "tag--dai": r.recommendationLevel === "daiChi" }]}>
-          {LEVEL_LABEL[r.recommendationLevel]}
-        </span>
+        {r.closed
+          ? <span class="tag tag--closed">已关店</span>
+          : <span class:list={["tag", { "tag--wubi": r.recommendationLevel === "wubiChi", "tag--fill": r.recommendationLevel === "yingChiBang", "tag--dai": r.recommendationLevel === "daiChi" }]}>
+              {LEVEL_LABEL[r.recommendationLevel]}
+            </span>}
         {r.cuisineTags.map((c) => <span class="tag">{c}</span>)}
       </div>
       {score && <p class="d-score"><span class="num">{score}</span></p>}

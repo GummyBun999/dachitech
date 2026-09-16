@@ -64,10 +64,12 @@ html, body { overflow-x: clip; }
   padding: 2px 10px; border-radius: var(--r-chip);
   font-size: var(--fs-sub); font-weight: 600; letter-spacing: 0;
   border: 1px solid var(--line); color: var(--ink-2);
+  white-space: nowrap; flex-shrink: 0; /* 长店名不得把标签挤到换行 */
 }
 .tag--fill { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .tag--wubi { background: var(--level-wubi); border-color: var(--level-wubi); color: #fff; }
 .tag--dai { background: #fbf1e2; border-color: #e6c48f; color: #9a5a12; } /* 待吃：暖橙描边 */
+.tag--closed { background: var(--paper-2); border-color: var(--line); color: var(--ink-3); } /* 已关店：灰 */
 
 /* 发丝线卡片（无阴影堆叠） */
 .card {
