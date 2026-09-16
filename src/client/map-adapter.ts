@@ -1,17 +1,19 @@
+export {}; // 使本文件成为模块，declare global 才生效
+
 /**
  * map-adapter —— 高德 JS API 2.0 站内地图（DEVELOPMENT-PLAN §7 交互合同 / §8 POI）。
  *
- * 边界：
- * - 只渲染有「已验证坐标」的门店（GCJ02，高德原生坐标系，构建时来自 manual-overrides.poi）。
- *   无坐标的店留列表「位置待补」，绝不落到城市中心假装有位置。
- * - key + securityJsCode 由页面注入（window.__AMAP）；缺凭据或 SDK 加载失败 → 显示降级文案 + 重试，
- *   列表/详情/高德外链不依赖本模块。
- * - 与 city-browser 解耦：通过 DOM 事件和 data 属性联动，不共享内部状态对象。
- *   marker↔card 双向选中用事件来源标记防递归。
+ * 本版新增（用户 2026-09-16 需求 1/4）：
+ * - marker 按榜单着色（务必吃/应吃榜/可以吃）；
+ * - 点击 marker 弹信息窗：店名 + 评分 + 导航 + 详情（移动端地图视图下即列表↔地图的联动载体）；
+ * - 「查看全部」重置回全览。
+ *
+ * 边界：只渲染已验证坐标；缺凭据/SDK 失败降级；筛选同步 marker 显隐；与 city-browser 事件解耦。
  */
-export {}; // 使本文件成为模块，declare global 才生效
-
-type Pt = { id: string; lng: number; lat: number; name: string };
+type Pt = {
+  id: string; lng: number; lat: number; name: string; level: string;
+  score: string; detail: string; amap: string;
+};
 
 declare global {
   interface Window {
@@ -39,20 +41,27 @@ function initMap(app: HTMLElement) {
   const fallback = app.querySelector<HTMLElement>("[data-mapfallback]");
   if (!panel) return;
 
-  // 收集本区有坐标的卡片
+  // 从卡片 DOM 收集有坐标的点（含导航/详情链接与评分，避免另存一份 JSON）
   const points: Pt[] = [];
   app.querySelectorAll<HTMLElement>(".rc").forEach((card) => {
     const lng = parseFloat(card.dataset.lng || "");
     const lat = parseFloat(card.dataset.lat || "");
-    if (Number.isFinite(lng) && Number.isFinite(lat)) {
-      const nameEl = card.querySelector(".rc-name");
-      points.push({ id: card.dataset.id || "", lng, lat, name: nameEl?.textContent?.trim() || "" });
-    }
+    if (!Number.isFinite(lng) || !Number.isFinite(lat)) return;
+    points.push({
+      id: card.dataset.id || "",
+      lng, lat,
+      name: card.querySelector(".rc-name")?.textContent?.trim() || "",
+      level: card.dataset.level || "keyiChi",
+      score: card.querySelector(".rc-score .num")?.textContent?.trim() || "",
+      detail: card.querySelector<HTMLAnchorElement>(".rc-name a")?.getAttribute("href") || "",
+      amap: card.querySelector<HTMLAnchorElement>(".rc-nav")?.getAttribute("href") || "",
+    });
   });
 
   const cfg = window.__AMAP;
   const showFallback = (msg: string, retry = false) => {
     if (!fallback) return;
+    fallback.hidden = false;
     fallback.innerHTML = "";
     const t = document.createElement("p");
     t.className = "mf-title";
@@ -74,19 +83,44 @@ function initMap(app: HTMLElement) {
   if (!cfg?.key) { showFallback("地图凭据未配置，先看列表；每家都能一键跳转高德搜索。"); return; }
 
   let map: any = null;
-  const markers = new Map<string, any>();
+  let info: any = null;
+  const markers = new Map<string, { marker: any; el: HTMLElement }>();
   let selecting = false; // 事件来源标记：防 marker↔card 递归
+  let activeId: string | null = null;
 
-  function selectCard(id: string, fromMap: boolean) {
+  const LEVEL_CN: Record<string, string> = { wubiChi: "务必吃", yingChiBang: "应吃榜", keyiChi: "可以吃", daiChi: "待吃" };
+
+  function highlight(id: string | null) {
+    markers.forEach((m, mid) => m.el.classList.toggle("is-active", mid === id));
+    app.querySelectorAll<HTMLElement>(".rc").forEach((c) =>
+      c.classList.toggle("rc--active", c.dataset.id === id));
+    activeId = id;
+  }
+
+  function openInfo(p: Pt) {
+    if (!info) return;
+    const box = document.createElement("div");
+    box.className = "map-iw";
+    box.innerHTML =
+      `<div class="map-iw-name">${p.name}</div>` +
+      `<div class="map-iw-meta">${LEVEL_CN[p.level] ?? ""}${p.score ? ` · <span class="num">${p.score}</span>` : ""}</div>` +
+      `<div class="map-iw-actions">` +
+        `<a class="map-iw-nav" href="${p.amap}" target="_blank" rel="noopener noreferrer">导航</a>` +
+        `<a class="map-iw-detail" href="${p.detail}">详情</a>` +
+      `</div>`;
+    info.setContent(box);
+    info.open(map, [p.lng, p.lat]);
+  }
+
+  function selectPoint(p: Pt, fromMap: boolean) {
     if (selecting) return;
     selecting = true;
     try {
-      app.querySelectorAll<HTMLElement>(".rc").forEach((c) =>
-        c.classList.toggle("rc--active", c.dataset.id === id));
-      const card = app.querySelector<HTMLElement>(`.rc[data-id="${id}"]`);
+      highlight(p.id);
+      openInfo(p);
+      const card = app.querySelector<HTMLElement>(`.rc[data-id="${p.id}"]`);
       if (card && fromMap) card.scrollIntoView({ block: "nearest", behavior: "smooth" });
-      markers.forEach((mk, mid) => mk.setzIndex?.(mid === id ? 130 : 110));
-      if (!fromMap && map && markers.has(id)) map.setCenter(markers.get(id).getPosition());
+      if (!fromMap && map) map.setCenter([p.lng, p.lat]);
     } finally {
       selecting = false;
     }
@@ -96,40 +130,66 @@ function initMap(app: HTMLElement) {
     try {
       const AMap = await loadAMap(cfg!.key, cfg!.security);
       map = new AMap.Map(panel, { zoom: 12, resizeEnable: true, viewMode: "2D" });
-      const pos = points.map((p) => {
-        const marker = new AMap.Marker({ position: [p.lng, p.lat], title: p.name });
-        marker.on("click", () => selectCard(p.id, true));
-        markers.set(p.id, marker);
-        return marker;
-      });
-      map.add(pos);
-      map.setFitView(pos, false, [24, 24, 24, 24]);
+      info = new AMap.InfoWindow({ isCustom: true, autoMove: true, offset: new AMap.Pixel(0, -14) });
+      map.on("click", () => { info.close(); highlight(null); });
+
+      const all: any[] = [];
+      for (const p of points) {
+        const el = document.createElement("div");
+        el.className = `map-pin map-pin--${p.level}`;
+        el.title = p.name;
+        const marker = new AMap.Marker({ position: [p.lng, p.lat], content: el, anchor: "center", zIndex: 110 });
+        // 自定义 content 的 marker，AMap 不自动绑点击 → 直接在元素上绑（并阻止冒泡到地图 click 关窗）
+        el.addEventListener("click", (ev) => { ev.stopPropagation(); selectPoint(p, true); });
+        marker.on("click", () => selectPoint(p, true));
+        markers.set(p.id, { marker, el });
+        all.push(marker);
+      }
+      map.add(all);
+      map.setFitView(all, false, [30, 30, 30, 30]);
       if (fallback) fallback.hidden = true;
 
-      // 筛选同步：被筛掉的卡片对应 marker 隐藏；零结果时地图无点（列表空态已提示）
+      // 「查看全部」重置（DEVELOPMENT-PLAN §7）
+      const reset = document.createElement("button");
+      reset.className = "map-reset";
+      reset.type = "button";
+      reset.textContent = "查看全部";
+      reset.addEventListener("click", () => {
+        info.close(); highlight(null);
+        const vis = [...markers.values()].filter((m) => m.marker.getMap()).map((m) => m.marker);
+        if (vis.length) map.setFitView(vis, false, [30, 30, 30, 30]);
+      });
+      panel.appendChild(reset);
+
+      // 筛选同步：被筛掉的卡片对应 marker 移除；当前选中被筛掉则关信息窗
       const syncMarkers = () => {
-        markers.forEach((mk, id) => {
+        markers.forEach((m, id) => {
           const card = app.querySelector<HTMLElement>(`.rc[data-id="${id}"]`);
-          mk.setMap(card?.hidden ? null : map); // setMap(null) 彻底移除 DOM，比 hide() 可靠
+          m.marker.setMap(card?.hidden ? null : map);
         });
+        if (activeId) {
+          const c = app.querySelector<HTMLElement>(`.rc[data-id="${activeId}"]`);
+          if (c?.hidden) { info.close(); highlight(null); }
+        }
       };
       app.addEventListener("city:filtered", syncMarkers);
-      syncMarkers(); // 地图异步加载完成时，立即对齐已生效的（URL 恢复的）筛选态
+      syncMarkers();
 
-      // 卡片 → 地图：点击卡片定位控件（详情链接除外）
+      // 卡片 → 地图：点击卡片定位（店名/图片/导航链接除外）
       app.querySelectorAll<HTMLElement>(".rc").forEach((card) => {
         if (!card.dataset.lng) return;
         card.addEventListener("click", (e) => {
-          if ((e.target as HTMLElement).closest("a")) return; // 店名/图片链接进详情，不拦截
-          selectCard(card.dataset.id || "", false);
+          if ((e.target as HTMLElement).closest("a")) return;
+          const p = points.find((x) => x.id === card.dataset.id);
+          if (p) selectPoint(p, false);
         });
       });
-    } catch (err) {
+    } catch {
       showFallback("地图暂时没加载出来，可继续看列表。", true);
     }
   }
 
-  // 首次进入地图视图或桌面直接可见时才加载 SDK（懒加载）
+  // 懒加载：可见即加载；否则进入视口或切到地图视图时加载
   const visible = () => panel.getClientRects().length > 0 && panel.offsetParent !== null;
   if (visible()) start();
   else {
@@ -137,7 +197,6 @@ function initMap(app: HTMLElement) {
       if (ents.some((e) => e.isIntersecting)) { io.disconnect(); start(); }
     });
     io.observe(panel);
-    // 移动端点「地图」视图时也触发
     app.querySelectorAll<HTMLButtonElement>('button[data-view="map"]').forEach((b) =>
       b.addEventListener("click", () => { if (!map) start(); }, { once: true }));
   }
