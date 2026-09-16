@@ -1,42 +1,49 @@
 {
-  "generatedAt": "2026-09-16T06:33:22.608Z",
+  "generatedAt": "2026-09-16T07:25:34.515Z",
   "policyVersion": "2026-09-16",
   "recentWindowDays": 120,
   "regions": [
     {
       "slug": "shenzhen",
       "name": "深圳",
-      "count": 43
+      "count": 43,
+      "wait": 0
     },
     {
       "slug": "zhongshan",
       "name": "中山",
-      "count": 0
+      "count": 0,
+      "wait": 0
     },
     {
       "slug": "chongqing",
       "name": "重庆",
-      "count": 1
+      "count": 1,
+      "wait": 0
     },
     {
       "slug": "guangzhou",
       "name": "广州",
-      "count": 3
+      "count": 3,
+      "wait": 0
     },
     {
       "slug": "japan",
       "name": "日本",
-      "count": 0
+      "count": 0,
+      "wait": 0
     },
     {
       "slug": "singapore",
       "name": "新加坡",
-      "count": 0
+      "count": 0,
+      "wait": 4
     },
     {
       "slug": "thailand",
       "name": "泰国",
-      "count": 0
+      "count": 0,
+      "wait": 0
     }
   ],
   "restaurants": [
@@ -1555,6 +1562,120 @@
       "coordSystem": null,
       "poiConfidence": null,
       "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "d_chickfila_bugis",
+      "slug": "Chick-fil-A-Bugis",
+      "regionSlug": "singapore",
+      "actualCity": "新加坡",
+      "brand": "Chick-fil-A",
+      "branch": "Bugis+",
+      "category": null,
+      "cuisineTags": [
+        "快餐"
+      ],
+      "reviewText": "亚洲首店 · 离米酒店步行可达 · 周一–六 10:00–22:00",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "daiChi",
+      "visitedAt": null,
+      "visitedAtPrecision": null,
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "Chick-fil-A%20%E6%96%B0%E5%8A%A0%E5%9D%A1%20Bugis%2B",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-09-16",
+      "coverImage": null
+    },
+    {
+      "id": "d_eminentfrog_geylang",
+      "slug": "明辉田鸡粥EminentFrogPorridge-Geylang",
+      "regionSlug": "singapore",
+      "actualCity": "新加坡",
+      "brand": "明辉田鸡粥 Eminent Frog Porridge",
+      "branch": "Geylang",
+      "category": null,
+      "cuisineTags": [
+        "粥品",
+        "夜宵"
+      ],
+      "reviewText": "可选夜宵 · 16:00–04:00 · 有体力再去",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "daiChi",
+      "visitedAt": null,
+      "visitedAtPrecision": null,
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E6%98%8E%E8%BE%89%E7%94%B0%E9%B8%A1%E7%B2%A5%20Eminent%20Frog%20Porridge%20%E6%96%B0%E5%8A%A0%E5%9D%A1%20Geylang",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-09-16",
+      "coverImage": null
+    },
+    {
+      "id": "d_21seafood_hougang",
+      "slug": "21Seafood-Hougang",
+      "regionSlug": "singapore",
+      "actualCity": "新加坡",
+      "brand": "21 Seafood",
+      "branch": "Hougang",
+      "category": null,
+      "cuisineTags": [
+        "海鲜",
+        "螃蟹"
+      ],
+      "reviewText": "吃蟹 · 出发前复核营业时间",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "daiChi",
+      "visitedAt": null,
+      "visitedAtPrecision": null,
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "21%20Seafood%20%E6%96%B0%E5%8A%A0%E5%9D%A1%20Hougang",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-09-16",
+      "coverImage": null
+    },
+    {
+      "id": "d_songfa_bkt",
+      "slug": "松发肉骨茶",
+      "regionSlug": "singapore",
+      "actualCity": "新加坡",
+      "brand": "松发肉骨茶",
+      "branch": null,
+      "category": null,
+      "cuisineTags": [
+        "肉骨茶"
+      ],
+      "reviewText": "下午加餐 · 具体门店待定",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "daiChi",
+      "visitedAt": null,
+      "visitedAtPrecision": null,
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E6%9D%BE%E5%8F%91%E8%82%89%E9%AA%A8%E8%8C%B6%20%E6%96%B0%E5%8A%A0%E5%9D%A1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-09-16",
       "coverImage": null
     }
   ]
