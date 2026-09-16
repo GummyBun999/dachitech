@@ -1,5 +1,5 @@
 ---
-import { fmtScore, fmtVisited, LEVEL_LABEL, detailPath, amapUrl, type PubRestaurant } from "../lib/food-data";
+import { fmtScore, fmtVisited, LEVEL_LABEL, detailPath, navUrl, navProvider, type PubRestaurant } from "../lib/food-data";
 interface Props { r: PubRestaurant }
 const { r } = Astro.props;
 const score = fmtScore(r.score10);
@@ -48,7 +48,7 @@ const searchHay = [r.brand, r.branch ?? "", ...r.dishes.map((d) => d.name), ...r
     )}
     <div class="rc-actions">
       {/* 导航：独立可点，直开高德，不嵌套在店名/图片链接内（DEVELOPMENT-PLAN §7） */}
-      <a class="rc-nav" href={amapUrl(r)} target="_blank" rel="noopener noreferrer" aria-label={`在高德地图打开${r.brand}`}>
+      <a class="rc-nav" href={navUrl(r)} target="_blank" rel="noopener noreferrer" aria-label={`在${navProvider(r)}打开${r.brand}`}>
         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/>
         </svg>

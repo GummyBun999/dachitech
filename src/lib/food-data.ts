@@ -70,8 +70,16 @@ export function fmtScore(score: number | null): string | null {
   return `${Number.isInteger(score) ? score.toFixed(0) : score.toFixed(1)}/10`;
 }
 
-/** 高德外链：店名+实际城市+分店，encodeURIComponent（生成时已编码） */
-export const amapUrl = (r: PubRestaurant) => `https://uri.amap.com/search?keyword=${r.amapQuery}`;
+/** 导航外链按地区分供应商：国内→高德，海外(日本/新加坡/泰国)→Google 地图（用户 2026-09-16） */
+const OVERSEAS = new Set(["japan", "singapore", "thailand"]);
+export const isOverseas = (r: PubRestaurant) => OVERSEAS.has(r.regionSlug);
+export const navUrl = (r: PubRestaurant) =>
+  isOverseas(r)
+    ? `https://www.google.com/maps/search/?api=1&query=${r.amapQuery}`
+    : `https://uri.amap.com/search?keyword=${r.amapQuery}`;
+export const navProvider = (r: PubRestaurant) => (isOverseas(r) ? "Google 地图" : "高德地图");
+/** @deprecated 用 navUrl；保留别名避免遗漏引用 */
+export const amapUrl = navUrl;
 
 /** 最后更新：可见内容实质变化（当前取发布集最大 contentUpdatedAt） */
 export function lastUpdated(list = restaurants): string | null {

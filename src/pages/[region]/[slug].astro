@@ -1,6 +1,6 @@
 ---
 import Layout from "../../components/Layout.astro";
-import { restaurants, regionName, fmtScore, fmtVisited, amapUrl, LEVEL_LABEL, regionPath, type PubRestaurant } from "../../lib/food-data";
+import { restaurants, regionName, fmtScore, fmtVisited, navUrl, navProvider, LEVEL_LABEL, regionPath, type PubRestaurant } from "../../lib/food-data";
 
 export function getStaticPaths() {
   return restaurants.map((r) => ({ params: { region: r.regionSlug, slug: r.slug }, props: { r } }));
@@ -57,7 +57,7 @@ const title = `${r.brand}${r.branch ? " · " + r.branch : ""}`;
       <h2 class="section-title">怎么去</h2>
       <div class="go card">
         <p class="go-addr">{r.actualCity}{r.branch ? ` · ${r.branch}` : ""}</p>
-        <a class="go-btn" href={amapUrl(r)} target="_blank" rel="noopener noreferrer">在高德地图打开</a>
+        <a class="go-btn" href={navUrl(r)} target="_blank" rel="noopener noreferrer">在{navProvider(r)}打开</a>
         <p class="go-note">搜索落地页不等于精确门店命中</p>
       </div>
     </section>
