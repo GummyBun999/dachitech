@@ -1,0 +1,178 @@
+---
+import Layout from "../components/Layout.astro";
+import RestaurantCard from "../components/RestaurantCard.astro";
+import { REGION_ORDER, regionName, byRegion, fmtVisited } from "../lib/food-data";
+import { existsSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
+
+export function getStaticPaths() {
+  return REGION_ORDER.map((slug) => ({ params: { region: slug } }));
+}
+const { region } = Astro.params;
+const name = regionName(region);
+const list = byRegion(region);
+const withCoords = list.filter((r) => r.lng !== null).length;
+
+// 高德凭据：优先 gitignore 的本地配置，其次 CI 注入的环境变量。缺失则地图降级（不阻塞列表）。
+function amapCfg() {
+  const p = resolve(process.cwd(), "data", "map-config.json");
+  if (existsSync(p)) {
+    try {
+      const c = JSON.parse(readFileSync(p, "utf8"));
+      if (c.amapKey) return { key: c.amapKey as string, security: (c.amapSecurityJsCode ?? "") as string };
+    } catch {}
+  }
+  const key = process.env.PUBLIC_AMAP_KEY;
+  return key ? { key, security: process.env.PUBLIC_AMAP_SECURITY ?? "" } : null;
+}
+const amap = amapCfg();
+
+// 筛选维度来自真实数据
+const cuisines = [...new Set(list.flatMap((r) => r.cuisineTags))].sort((a, b) => a.localeCompare(b, "zh"));
+const LEVELS = [
+  { key: "wubiChi", label: "务必吃" },
+  { key: "yingChiBang", label: "应吃榜" },
+  { key: "keyiChi", label: "可以吃" },
+] as const;
+---
+<Layout title={`${name} · 大吃特吃`} description={`${name}的本人实吃记录。`}>
+  <div class="page page-inner city-head">
+    <h1 class="display city-title">{name}</h1>
+    <p class="city-sub">{list.length > 0 ? `${list.length} 家本人实吃` : "这个地区还没有实吃记录"}</p>
+  </div>
+
+  {list.length === 0 ? (
+    <div class="page page-inner">
+      <div class="empty">还没有记录。吃过之后就会出现在这里。</div>
+    </div>
+  ) : (
+    <div class="page page-inner city-app" data-region={region}>
+      {/* 操作区：fal 操作语域——字重+发丝线，不用海报色 */}
+      <div class="controls" role="search">
+        <input class="q" type="search" placeholder="搜店名 / 菜名" aria-label="搜索店名或菜名" data-q />
+        <div class="chips" role="group" aria-label="品类筛选">
+          {cuisines.map((c) => <button class="chip" data-cat={c} aria-pressed="false">{c}</button>)}
+        </div>
+        <div class="chips" role="group" aria-label="榜单筛选">
+          {LEVELS.map((l) => <button class="chip chip--level" data-level={l.key} aria-pressed="false">{l.label}</button>)}
+        </div>
+        <div class="view-switch" role="group" aria-label="视图切换">
+          <button data-view="list" aria-pressed="true">列表</button>
+          <button data-view="map" aria-pressed="false">地图</button>
+        </div>
+        <button class="clear" data-clear hidden>清除筛选</button>
+      </div>
+
+      <p class="count-line" data-count>{list.length} 家</p>
+
+      <div class="split">
+        <section class="list" data-list aria-label="餐厅列表">
+          {list.map((r) => <RestaurantCard r={r} />)}
+          <div class="empty" data-empty hidden>没有符合筛选的店。<button class="clear-inline" data-clear>清除筛选</button></div>
+        </section>
+
+        <section class="map-col" data-mapcol aria-label="地图">
+          <div class="map-panel card" data-mappanel>
+            {/* 地图挂载点。当前 0 已验证坐标 + 高德 key 域名白名单待部署后实测（DECISIONS D1/D2）；
+                不放假坐标假地图，显示诚实待补态。补坐标后在此接入 map-adapter。 */}
+            <div class="map-fallback" data-mapfallback>
+              {withCoords > 0 && amap ? (
+                <p class="mf-sub">地图加载中…</p>
+              ) : (
+                <>
+                  <p class="mf-title">地图待补</p>
+                  <p class="mf-sub">这 {list.length} 家门店坐标还没核实。<br />先看列表，每家都能一键跳转高德搜索。</p>
+                </>
+              )}
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  )}
+</Layout>
+
+<style>
+  .city-head { padding-top: var(--s-12); display: grid; gap: var(--s-3); }
+  .city-title { font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem); }
+  .city-sub { color: var(--ink-2); font-size: var(--fs-sub); }
+  .city-app { margin-top: var(--s-8); display: grid; gap: var(--s-4); }
+  .controls { display: grid; gap: var(--s-3); padding-block: var(--s-3); border-block: 1px solid var(--line); }
+  .q {
+    width: 100%; min-height: var(--touch); padding: 0 var(--s-4);
+    border: 1px solid var(--line); border-radius: var(--r-chip); font: inherit; letter-spacing: var(--ls-text);
+  }
+  .chips { display: flex; gap: var(--s-2); overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+  .chip {
+    flex: none; min-height: 36px; padding: 0 14px; border-radius: var(--r-chip);
+    border: 1px solid var(--line); font-size: var(--fs-sub); font-weight: 550; color: var(--ink-2);
+    transition: opacity var(--t), transform var(--t);
+  }
+  .chip[aria-pressed="true"] { background: var(--op); border-color: var(--op); color: #fff; }
+  .view-switch { display: flex; border: 1px solid var(--line); border-radius: var(--r-chip); overflow: hidden; width: fit-content; }
+  .view-switch button { min-height: 36px; padding: 0 16px; font-size: var(--fs-sub); font-weight: 550; color: var(--ink-2); }
+  .view-switch button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+  .clear { justify-self: start; min-height: 36px; color: var(--op); font-size: var(--fs-sub); font-weight: 600; }
+  .clear-inline { color: var(--op); font-weight: 600; margin-left: 4px; }
+  .count-line { font-size: var(--fs-sub); color: var(--ink-2); }
+  .split { display: grid; gap: var(--s-4); }
+  .list { display: grid; gap: var(--s-4); align-content: start; }
+  .map-panel {
+    position: sticky; top: 72px;
+    height: 60dvh; min-height: 320px;
+    overflow: hidden;
+  }
+  .map-panel :global(.amap-container) { width: 100%; height: 100%; }
+  .map-fallback {
+    position: absolute; inset: 0;
+    color: var(--ink-3); font-size: var(--fs-sub); text-align: center;
+    display: grid; place-content: center; gap: var(--s-2); padding: var(--s-6);
+  }
+  .mf-title { color: var(--ink-2); font-weight: 600; }
+  .mf-sub { line-height: 1.6; }
+  .mf-retry {
+    justify-self: center; margin-top: var(--s-2); min-height: 36px; padding: 0 var(--s-4);
+    border: 1px solid var(--line); border-radius: var(--r-chip); font-weight: 600; color: var(--ink);
+  }
+  /* 地图 marker 对应卡片选中态：不只靠颜色，用左边线 + 底色 */
+  :global(.rc--active) { box-shadow: inset 3px 0 0 var(--op); }
+
+  /* <768：单列，地图在列表上方（55–65dvh），视图可切换 */
+  @media (max-width: 767px) {
+    .map-col { order: -1; }
+    .map-panel { position: relative; top: 0; height: 58dvh; }
+  }
+  /* 768–1023：地图上、列表两列下 */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .list { grid-template-columns: repeat(2, 1fr); }
+    .map-panel { height: 52dvh; position: relative; top: 0; }
+  }
+  /* ≥1024：左列表 380–440px、右地图独立滚动 */
+  @media (min-width: 1024px) {
+    .split { grid-template-columns: var(--list-col) 1fr; align-items: start; }
+    .list { max-height: calc(100dvh - 96px); overflow-y: auto; padding-right: 2px; }
+    .map-panel { height: calc(100dvh - 96px); }
+  }
+  /* 视图切换（移动）：列表视图藏地图，地图视图藏列表 */
+  @media (max-width: 1023px) {
+    .city-app[data-view="list"] .map-col { display: none; }
+    .city-app[data-view="map"] .list { display: none; }
+  }
+</style>
+
+<script>
+  // P3：筛选 / 搜索 / 视图切换 / URL 状态 / 滚动恢复
+  import "../client/city-browser.ts";
+</script>
+
+{withCoords > 0 && amap && (
+  <>
+    <script is:inline define:vars={{ amap }}>
+      window.__AMAP = { key: amap.key, security: amap.security };
+    </script>
+    <script>
+      // P3：高德站内地图（marker↔card 双向联动，仅渲染已验证坐标）
+      import "../client/map-adapter.ts";
+    </script>
+  </>
+)}

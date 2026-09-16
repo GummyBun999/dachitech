@@ -1,0 +1,57 @@
+---
+import "../styles/global.css";
+import { REGION_ORDER, regionName, regionCount, regionPath, homePath, lastUpdated } from "../lib/food-data";
+
+interface Props { title?: string; description?: string }
+const { title = "大吃特吃", description = "深圳及其他地方的本人实吃记录。" } = Astro.props;
+const updated = lastUpdated();
+const here = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>{title === "大吃特吃" ? title : `${title} · 大吃特吃`}</title>
+  <meta name="description" content={description} />
+</head>
+<body>
+  <header class="site-header">
+    <div class="page header-row">
+      <a class="brand" href={homePath}>大吃特吃</a>
+      <nav class="region-nav" aria-label="地区">
+        {REGION_ORDER.map((s) => (
+          <a class:list={["region-link", { on: here.startsWith(`${homePath}${s}`) }]} href={regionPath(s)}>
+            {regionName(s)}<span class="num cnt">{regionCount(s)}</span>
+          </a>
+        ))}
+      </nav>
+    </div>
+  </header>
+  <main><slot /></main>
+  <footer class="site-footer">
+    <div class="page footer-row">
+      <span>大吃特吃 · 深圳及其他地方的本人实吃记录。</span>
+      {updated && <span>最后更新 <span class="num">{updated}</span></span>}
+    </div>
+  </footer>
+</body>
+</html>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: none; border-bottom: 1px solid var(--line); }
+  .header-row { display: flex; align-items: center; gap: var(--s-4); min-height: 56px; overflow-x: auto; scrollbar-width: none; }
+  .brand { font-weight: 700; font-size: 1.125rem; color: var(--ink); letter-spacing: var(--ls-text); flex: none; }
+  .brand:hover { text-decoration: none; }
+  .region-nav { display: flex; gap: 2px; margin-left: auto; }
+  .region-link {
+    display: inline-flex; align-items: center; gap: 6px; min-height: var(--touch);
+    padding: 0 10px; border-radius: var(--r-chip); color: var(--ink-2); font-size: var(--fs-sub); font-weight: 550;
+    white-space: nowrap;
+  }
+  .region-link:hover { background: var(--paper-2); text-decoration: none; }
+  .region-link.on { color: var(--ink); background: var(--brand-soft); }
+  .cnt { color: var(--ink-3); font-size: 0.8em; }
+  .site-footer { border-top: 1px solid var(--line); margin-top: var(--s-16); }
+  .footer-row { display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-6); padding-block: var(--s-6); color: var(--ink-2); font-size: var(--fs-sub); }
+</style>

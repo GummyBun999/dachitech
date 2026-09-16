@@ -1,0 +1,52 @@
+/* 大吃特吃 · 设计 tokens（DEVELOPMENT-PLAN §6；fal 取舍/反面清单）
+   颜色只允许从这里出，组件不散填色值。 */
+:root {
+  /* 色 */
+  --paper: #ffffff;
+  --paper-2: #fafaf9;
+  --ink: #121216;            /* off-black，禁纯黑 */
+  --ink-2: #57575e;
+  --ink-3: #8a8a92;
+  --line: rgba(18, 18, 22, 0.13); /* fal 发丝线；边线与阴影二选一，本站全用线 */
+  --brand: #99ecff;          /* fal 海报青：主页首尾闭环 */
+  --brand-soft: #e8faff;
+  --op: #2451e6;             /* 操作区蓝：筛选选中/链接/地图控件 */
+  --op-soft: #eef2ff;
+  --level-wubi: #4a17b0;     /* 全站唯一强调色：务必吃 */
+  --dark: #121216;           /* 深色换气块 */
+
+  /* 字 */
+  --font-sans: "Public Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: "Chivo Mono", ui-monospace, monospace;
+
+  /* 字号（clamp 平滑缩放；主标题为新项目设计值，非 fal 实测） */
+  --fs-hero: clamp(2.5rem, 4.5vw + 1.5rem, 6rem);   /* 移动 40 → 桌面 96 */
+  --fs-section: clamp(1.5rem, 1.2vw + 1.1rem, 2rem); /* 24–32 */
+  --fs-shop: clamp(1.25rem, 0.5vw + 1.1rem, 1.5rem); /* 20–24 */
+  --fs-body: 1rem;          /* 16/1.5–1.65 */
+  --fs-sub: 0.875rem;       /* 14 */
+
+  /* 字距分档（取舍：≥36 -0.04em；16–24 -0.02em；≤14 0） */
+  --ls-display: -0.04em;
+  --ls-text: -0.02em;
+
+  /* 圆角层级：通栏0 / 内容卡4 / 小卡6 / 图卡8 / 浮层12 */
+  --r-card: 4px;
+  --r-chip: 6px;
+  --r-image: 8px;
+  --r-overlay: 12px;
+
+  /* 间距基准 4/8/12/16/24/32/48/64 */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-6: 24px; --s-8: 32px; --s-12: 48px; --s-16: 64px;
+
+  /* 布局 */
+  --page-max: 1440px;
+  --content-max: 1200px;
+  --list-col: 410px; /* ≥1024 城市页左列 380–440 */
+
+  /* 动效：150–220ms，只动 transform/opacity */
+  --t: 180ms cubic-bezier(0.2, 0, 0.2, 1);
+
+  /* 触控目标 ≥44px */
+  --touch: 44px;
+}

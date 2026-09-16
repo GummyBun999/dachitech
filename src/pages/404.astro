@@ -1,0 +1,20 @@
+---
+import Layout from "../components/Layout.astro";
+import { homePath } from "../lib/food-data";
+---
+<Layout title="没找到这一页" description="页面不存在">
+  <div class="page page-inner nf">
+    <h1 class="display">没找到</h1>
+    <p>这一页不存在，或者店被下架了。</p>
+    <a class="nf-home" href={homePath}>回首页</a>
+  </div>
+</Layout>
+
+<style>
+  .nf { padding-top: var(--s-16); display: grid; gap: var(--s-4); justify-items: start; }
+  .nf-home {
+    display: inline-flex; align-items: center; min-height: var(--touch); padding: 0 var(--s-6);
+    background: var(--ink); color: var(--paper); border-radius: var(--r-chip); font-weight: 600;
+  }
+  .nf-home:hover { text-decoration: none; opacity: 0.88; }
+</style>

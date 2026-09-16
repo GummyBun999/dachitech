@@ -1,0 +1,1561 @@
+{
+  "generatedAt": "2026-09-16T06:33:22.608Z",
+  "policyVersion": "2026-09-16",
+  "recentWindowDays": 120,
+  "regions": [
+    {
+      "slug": "shenzhen",
+      "name": "深圳",
+      "count": 43
+    },
+    {
+      "slug": "zhongshan",
+      "name": "中山",
+      "count": 0
+    },
+    {
+      "slug": "chongqing",
+      "name": "重庆",
+      "count": 1
+    },
+    {
+      "slug": "guangzhou",
+      "name": "广州",
+      "count": 3
+    },
+    {
+      "slug": "japan",
+      "name": "日本",
+      "count": 0
+    },
+    {
+      "slug": "singapore",
+      "name": "新加坡",
+      "count": 0
+    },
+    {
+      "slug": "thailand",
+      "name": "泰国",
+      "count": 0
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "r_5d336e49",
+      "slug": "白山烤肉-南山店",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "白山烤肉",
+      "branch": "南山店",
+      "category": null,
+      "cuisineTags": [
+        "韩料"
+      ],
+      "reviewText": "8.5",
+      "dishes": [
+        {
+          "name": "山葵雪花和牛肋条 / 五花肉炒饭",
+          "score10": null
+        }
+      ],
+      "score10": 8.5,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "wubiChi",
+      "visitedAt": "2026-05-29",
+      "visitedAtPrecision": "day",
+      "inRecent": true,
+      "multiShop": false,
+      "amapQuery": "%E7%99%BD%E5%B1%B1%E7%83%A4%E8%82%89%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1%E5%BA%97",
+      "lng": 113.923755,
+      "lat": 22.521297,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-07-13",
+      "coverImage": null
+    },
+    {
+      "id": "r_8ceb0126",
+      "slug": "荷利炸物-宝安店",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "荷利炸物",
+      "branch": "宝安店",
+      "category": null,
+      "cuisineTags": [
+        "日料"
+      ],
+      "reviewText": "8",
+      "dishes": [
+        {
+          "name": "日式炸牛排 / 乌冬面",
+          "score10": null
+        }
+      ],
+      "score10": 8,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "wubiChi",
+      "visitedAt": "2026-05-09",
+      "visitedAtPrecision": "day",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E8%8D%B7%E5%88%A9%E7%82%B8%E7%89%A9%20%E6%B7%B1%E5%9C%B3%20%E5%AE%9D%E5%AE%89%E5%BA%97",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-07-13",
+      "coverImage": null
+    },
+    {
+      "id": "r_f573b614",
+      "slug": "大阪烧肉-BAKA一代（购物公园）",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "大阪烧肉",
+      "branch": "BAKA一代（购物公园）",
+      "category": null,
+      "cuisineTags": [
+        "日料"
+      ],
+      "reviewText": "7.5",
+      "dishes": [
+        {
+          "name": "日式烧烤/烤肉；横膈膜这次没点",
+          "score10": null
+        }
+      ],
+      "score10": 7.5,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-06-22",
+      "visitedAtPrecision": "day",
+      "inRecent": true,
+      "multiShop": false,
+      "amapQuery": "%E5%A4%A7%E9%98%AA%E7%83%A7%E8%82%89%20%E6%B7%B1%E5%9C%B3%20BAKA%E4%B8%80%E4%BB%A3%EF%BC%88%E8%B4%AD%E7%89%A9%E5%85%AC%E5%9B%AD%EF%BC%89",
+      "lng": 114.05333,
+      "lat": 22.536315,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-07-13",
+      "coverImage": null
+    },
+    {
+      "id": "r_5149c8ec",
+      "slug": "烧鹅佬-壹方城附近-宝安",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "烧鹅佬",
+      "branch": "壹方城附近 / 宝安",
+      "category": null,
+      "cuisineTags": [
+        "粤菜"
+      ],
+      "reviewText": "7",
+      "dishes": [
+        {
+          "name": "陈村粉 烧鹅 白切鸡",
+          "score10": null
+        }
+      ],
+      "score10": 7,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-05-02",
+      "visitedAtPrecision": "day",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E7%83%A7%E9%B9%85%E4%BD%AC%20%E6%B7%B1%E5%9C%B3%20%E5%A3%B9%E6%96%B9%E5%9F%8E%E9%99%84%E8%BF%91%20%2F%20%E5%AE%9D%E5%AE%89",
+      "lng": 113.888093,
+      "lat": 22.552912,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-07-13",
+      "coverImage": null
+    },
+    {
+      "id": "r_01c8ab1f",
+      "slug": "寿司郎1-海岸城",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "寿司郎1",
+      "branch": "海岸城",
+      "category": null,
+      "cuisineTags": [
+        "日料"
+      ],
+      "reviewText": "7",
+      "dishes": [
+        {
+          "name": "金枪鱼\n鹅肝\n抹茶布丁",
+          "score10": null
+        }
+      ],
+      "score10": 7,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-04-26",
+      "visitedAtPrecision": "day",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E5%AF%BF%E5%8F%B8%E9%83%8E1%20%E6%B7%B1%E5%9C%B3%20%E6%B5%B7%E5%B2%B8%E5%9F%8E",
+      "lng": 113.935399,
+      "lat": 22.517659,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-07-08",
+      "coverImage": null
+    },
+    {
+      "id": "r_c2900e2e",
+      "slug": "寿司郎2-KKONE",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "寿司郎2",
+      "branch": "KKONE",
+      "category": null,
+      "cuisineTags": [
+        "日料"
+      ],
+      "reviewText": "7",
+      "dishes": [
+        {
+          "name": "五月活动 / 焦糖鹅肝寿司",
+          "score10": null
+        }
+      ],
+      "score10": 7,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-05-16",
+      "visitedAtPrecision": "day",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E5%AF%BF%E5%8F%B8%E9%83%8E2%20%E6%B7%B1%E5%9C%B3%20KKONE",
+      "lng": 114.026721,
+      "lat": 22.527642,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-07-08",
+      "coverImage": null
+    },
+    {
+      "id": "r_5f30f5e8",
+      "slug": "79渔船-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "79渔船",
+      "branch": "南山",
+      "category": "饭店",
+      "cuisineTags": [
+        "海鲜"
+      ],
+      "reviewText": "花的团建经费所以很香 让我恐腥人对海鲜改观了 扇贝粉丝 百香果什么忘了\n炸排骨不要点很该死的不新鲜怪味预制菜",
+      "dishes": [
+        {
+          "name": "扇贝粉丝",
+          "review": "花的团建经费所以很香 让我恐腥人对海鲜改观了 扇贝粉丝 百香果什么忘了\n炸排骨不要点很该死的不新鲜怪味预制菜",
+          "score10": 9.6
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2024-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "79%E6%B8%94%E8%88%B9%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_11aadf59",
+      "slug": "813",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "813",
+      "branch": null,
+      "category": "饮品",
+      "cuisineTags": [
+        "奶茶"
+      ],
+      "reviewText": "热的好喝 冰的不行 常温更是马尿",
+      "dishes": [
+        {
+          "name": "普洱",
+          "review": "热的好喝 冰的不行 常温更是马尿",
+          "score10": 9.6
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "813%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_00aaa5ae",
+      "slug": "阿莱泰国菜-宝安",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "阿莱泰国菜",
+      "branch": "宝安",
+      "category": "饭店",
+      "cuisineTags": [
+        "泰料"
+      ],
+      "reviewText": "便宜大碗 四个人9个菜吃晕了 炒饭和汤还行 是一款有性价比的预制店",
+      "dishes": [
+        {
+          "name": "炒饭和汤",
+          "review": "便宜大碗 四个人9个菜吃晕了 炒饭和汤还行 是一款有性价比的预制店",
+          "score10": 9
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2025-09",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E9%98%BF%E8%8E%B1%E6%B3%B0%E5%9B%BD%E8%8F%9C%20%E6%B7%B1%E5%9C%B3%20%E5%AE%9D%E5%AE%89",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_a0e39089",
+      "slug": "半藏寿司-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "半藏寿司",
+      "branch": "南山",
+      "category": "饭店",
+      "cuisineTags": [
+        "日料"
+      ],
+      "reviewText": "我生日去的 还可以",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E5%8D%8A%E8%97%8F%E5%AF%BF%E5%8F%B8%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_4b0af625",
+      "slug": "常来大牌档",
+      "regionSlug": "guangzhou",
+      "actualCity": "广州",
+      "brand": "常来大牌档",
+      "branch": null,
+      "category": "饭店",
+      "cuisineTags": [
+        "粤菜"
+      ],
+      "reviewText": "葱油鸡 - 酱油里有点芥末我很喜\n咸蛋黄叉烧\n青椒虾滑",
+      "dishes": [
+        {
+          "name": "葱油鸡",
+          "review": "葱油鸡 - 酱油里有点芥末我很喜\n咸蛋黄叉烧\n青椒虾滑",
+          "score10": 9.4
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2025-11",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E5%B8%B8%E6%9D%A5%E5%A4%A7%E7%89%8C%E6%A1%A3%20%E5%B9%BF%E5%B7%9E",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_e92ee78c",
+      "slug": "潮德阿水-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "潮德阿水",
+      "branch": "南山",
+      "category": "饭店",
+      "cuisineTags": [
+        "粤菜"
+      ],
+      "reviewText": "1. 当前最夯的牛肉火锅\n2. 店里吃湿炒牛河 外卖点干炒",
+      "dishes": [
+        {
+          "name": "牛肉火锅",
+          "review": "1. 当前最夯的牛肉火锅\n2. 店里吃湿炒牛河 外卖点干炒",
+          "score10": null
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-02",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E6%BD%AE%E5%BE%B7%E9%98%BF%E6%B0%B4%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_a08bb2f9",
+      "slug": "脆皮鸡煲碧海湾-宝安",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "脆皮鸡煲 碧海湾",
+      "branch": "宝安",
+      "category": "饭店",
+      "cuisineTags": [
+        "火锅"
+      ],
+      "reviewText": "这个类型很难不好吃",
+      "dishes": [
+        {
+          "name": "脆皮鸡",
+          "review": "这个类型很难不好吃",
+          "score10": 9.6
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2024-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E8%84%86%E7%9A%AE%E9%B8%A1%E7%85%B2%20%E7%A2%A7%E6%B5%B7%E6%B9%BE%20%E6%B7%B1%E5%9C%B3%20%E5%AE%9D%E5%AE%89",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_3f0c55cd",
+      "slug": "大阪烧肉-福田",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "大阪烧肉",
+      "branch": "福田",
+      "category": "饭店",
+      "cuisineTags": [
+        "烤肉"
+      ],
+      "reviewText": "我们生日都去了 是好吃 但是本人对口感十分不敏感 get不到细糠",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E5%A4%A7%E9%98%AA%E7%83%A7%E8%82%89%20%E6%B7%B1%E5%9C%B3%20%E7%A6%8F%E7%94%B0",
+      "lng": 114.05333,
+      "lat": 22.536315,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_65073582",
+      "slug": "大鸽饭",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "大鸽饭",
+      "branch": null,
+      "category": "饭店",
+      "cuisineTags": [
+        "粤菜"
+      ],
+      "reviewText": "跟喜上鸽比逊色了",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-02",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E5%A4%A7%E9%B8%BD%E9%A5%AD%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_56ae5990",
+      "slug": "大鱼烧肉自助-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "大鱼烧肉自助",
+      "branch": "南山",
+      "category": "饭店",
+      "cuisineTags": [
+        "烤肉"
+      ],
+      "reviewText": "一款高性价比烤肉之选",
+      "dishes": [
+        {
+          "name": "烧肉",
+          "review": "一款高性价比烤肉之选",
+          "score10": 9.6
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2025-08",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E5%A4%A7%E9%B1%BC%E7%83%A7%E8%82%89%E8%87%AA%E5%8A%A9%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_850519c6",
+      "slug": "丹东烤肉-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "丹东烤肉",
+      "branch": "南山",
+      "category": "饭店",
+      "cuisineTags": [
+        "烤肉"
+      ],
+      "reviewText": "调味挺好的 肉也新鲜吧",
+      "dishes": [
+        {
+          "name": "烤肉",
+          "review": "调味挺好的 肉也新鲜吧",
+          "score10": 9.6
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2024-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E4%B8%B9%E4%B8%9C%E7%83%A4%E8%82%89%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_54083fe5",
+      "slug": "东洞小馆-福田",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "东洞小馆",
+      "branch": "福田",
+      "category": "饭店",
+      "cuisineTags": [
+        "韩料"
+      ],
+      "reviewText": "牛肋骨汤直接给到夯 但是好像人很多要排队来着",
+      "dishes": [
+        {
+          "name": "牛肋骨汤",
+          "review": "牛肋骨汤直接给到夯 但是好像人很多要排队来着",
+          "score10": 9.6
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2024-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E4%B8%9C%E6%B4%9E%E5%B0%8F%E9%A6%86%20%E6%B7%B1%E5%9C%B3%20%E7%A6%8F%E7%94%B0",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_1e887f4a",
+      "slug": "冬阴功-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "冬阴功",
+      "branch": "南山",
+      "category": "饭店",
+      "cuisineTags": [
+        "泰料"
+      ],
+      "reviewText": "1. 黄咖喱可 整体都还可以\n2. 茶很好喝。。",
+      "dishes": [
+        {
+          "name": "黄咖喱",
+          "review": "1. 黄咖喱可 整体都还可以\n2. 茶很好喝。。",
+          "score10": 9.4
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-02",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E5%86%AC%E9%98%B4%E5%8A%9F%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": 113.923826,
+      "lat": 22.527952,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_39796ee1",
+      "slug": "肥稻-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "肥稻",
+      "branch": "南山",
+      "category": "饭店",
+      "cuisineTags": [
+        "茶餐厅"
+      ],
+      "reviewText": "性价比高 推荐菜忘了",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E8%82%A5%E7%A8%BB%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_01ce3a40",
+      "slug": "黑鸭煲-宝安",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "黑鸭煲",
+      "branch": "宝安",
+      "category": "饭店",
+      "cuisineTags": [
+        "鄂菜"
+      ],
+      "reviewText": "1. 吃不出鸭味是没问题的\n2. 粉好吃 很特别\n3. 酱料重了 重口人倒是可以吃\n还是不少人喜欢广东辣的",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-02",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E9%BB%91%E9%B8%AD%E7%85%B2%20%E6%B7%B1%E5%9C%B3%20%E5%AE%9D%E5%AE%89",
+      "lng": 113.871875,
+      "lat": 22.569125,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_14c757d1",
+      "slug": "黑旨烧肉-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "黑旨烧肉",
+      "branch": "南山",
+      "category": "饭店",
+      "cuisineTags": [
+        "日料"
+      ],
+      "reviewText": "ymjj生日去的 好吃的 第一次吃鹅肝\n但本山猪不爱吃细糠",
+      "dishes": [
+        {
+          "name": "鹅肝",
+          "review": "ymjj生日去的 好吃的 第一次吃鹅肝\n但本山猪不爱吃细糠",
+          "score10": 9.4
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E9%BB%91%E6%97%A8%E7%83%A7%E8%82%89%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_c8af1b7d",
+      "slug": "胡须佬-福田",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "胡须佬",
+      "branch": "福田",
+      "category": "饭店",
+      "cuisineTags": [
+        "粤菜"
+      ],
+      "reviewText": "1. 鸡煲+肥肠 香\n2. 脆肉皖 - 待吃 说是我不点鱼肉白吃了",
+      "dishes": [
+        {
+          "name": "鸡煲+肥肠 香\n脆肉皖",
+          "review": "1. 鸡煲+肥肠 香\n2. 脆肉皖 - 待吃 说是我不点鱼肉白吃了",
+          "score10": 9.4
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-02",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E8%83%A1%E9%A1%BB%E4%BD%AC%20%E6%B7%B1%E5%9C%B3%20%E7%A6%8F%E7%94%B0",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_fd9722d5",
+      "slug": "姜虎东",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "姜虎东",
+      "branch": null,
+      "category": "饭店",
+      "cuisineTags": [
+        "韩料"
+      ],
+      "reviewText": "吃很多很多次了肉还行吧 蛋和红薯泥好吃 部队锅不行",
+      "dishes": [
+        {
+          "name": "蛋和红薯泥",
+          "review": "吃很多很多次了肉还行吧 蛋和红薯泥好吃 部队锅不行",
+          "score10": 9
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E5%A7%9C%E8%99%8E%E4%B8%9C%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_7afa2338",
+      "slug": "蒋三小面-弹子石",
+      "regionSlug": "chongqing",
+      "actualCity": "重庆",
+      "brand": "蒋三小面",
+      "branch": "弹子石",
+      "category": "饭店",
+      "cuisineTags": [
+        "川菜"
+      ],
+      "reviewText": "2023-2026 吃了三次 夯\n  1. 碗杂面 12r\n  2. 重庆小面 7r+煎蛋2r\n此店开了二十几年",
+      "dishes": [
+        {
+          "name": "碗杂面",
+          "review": "2023-2026 吃了三次 夯\n  1. 碗杂面 12r\n  2. 重庆小面 7r+煎蛋2r\n此店开了二十几年",
+          "score10": 9.8
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-02",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E8%92%8B%E4%B8%89%E5%B0%8F%E9%9D%A2%20%E9%87%8D%E5%BA%86%20%E5%BC%B9%E5%AD%90%E7%9F%B3",
+      "lng": 106.600989,
+      "lat": 29.577724,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_355fcca4",
+      "slug": "街头石边-番禺",
+      "regionSlug": "guangzhou",
+      "actualCity": "广州",
+      "brand": "街头石边",
+      "branch": "番禺",
+      "category": "饭店",
+      "cuisineTags": [
+        "粤菜"
+      ],
+      "reviewText": "很香的小店",
+      "dishes": [
+        {
+          "name": "1. 沙姜鸡\n  2. 蚵仔煎\n  3. 干蒸排骨",
+          "review": "很香的小店",
+          "score10": 9.4
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-02",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E8%A1%97%E5%A4%B4%E7%9F%B3%E8%BE%B9%20%E5%B9%BF%E5%B7%9E%20%E7%95%AA%E7%A6%BA",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_5cd1bbca",
+      "slug": "客家本色",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "客家本色",
+      "branch": null,
+      "category": "饭店",
+      "cuisineTags": [
+        "客家菜"
+      ],
+      "reviewText": "古法盐焗鸡 客家菜唯爱这个",
+      "dishes": [
+        {
+          "name": "古法盐焗鸡",
+          "review": "古法盐焗鸡 客家菜唯爱这个",
+          "score10": 9.2
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2025-10",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E5%AE%A2%E5%AE%B6%E6%9C%AC%E8%89%B2%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_32a5ed51",
+      "slug": "茉莉奶白",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "茉莉奶白",
+      "branch": null,
+      "category": "饮品",
+      "cuisineTags": [
+        "果味奶茶"
+      ],
+      "reviewText": "",
+      "dishes": [
+        {
+          "name": "草莓奶皮子",
+          "score10": 9.4
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-02",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E8%8C%89%E8%8E%89%E5%A5%B6%E7%99%BD%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_c06edb84",
+      "slug": "年例食堂-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "年例食堂",
+      "branch": "南山",
+      "category": "外卖",
+      "cuisineTags": [
+        "粤菜"
+      ],
+      "reviewText": "很好这一口 但是不是很吃得饱",
+      "dishes": [
+        {
+          "name": "香油鸡和捞粉",
+          "review": "很好这一口 但是不是很吃得饱",
+          "score10": 9.2
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2025-08",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E5%B9%B4%E4%BE%8B%E9%A3%9F%E5%A0%82%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_818a8b24",
+      "slug": "农耕记",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "农耕记",
+      "branch": null,
+      "category": "饭店",
+      "cuisineTags": [
+        "湘菜"
+      ],
+      "reviewText": "海岸城店品控都很拉 花菜腊肉没有 可以给一次机会换家店吃",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E5%86%9C%E8%80%95%E8%AE%B0%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_89bd498c",
+      "slug": "秋色客家菜-宝安",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "秋色客家菜",
+      "branch": "宝安",
+      "category": "饭店",
+      "cuisineTags": [
+        "客家菜"
+      ],
+      "reviewText": "古法盐焗鸡 客家菜唯爱这个",
+      "dishes": [
+        {
+          "name": "古法盐焗鸡",
+          "review": "古法盐焗鸡 客家菜唯爱这个",
+          "score10": 9.2
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2025-10",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E7%A7%8B%E8%89%B2%E5%AE%A2%E5%AE%B6%E8%8F%9C%20%E6%B7%B1%E5%9C%B3%20%E5%AE%9D%E5%AE%89",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_7c9bdfb1",
+      "slug": "阮三嬢火锅-宝安",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "阮三嬢火锅",
+      "branch": "宝安",
+      "category": "饭店",
+      "cuisineTags": [
+        "火锅"
+      ],
+      "reviewText": "很正宗的重庆火锅 总店小味道好 新店大味道差点",
+      "dishes": [
+        {
+          "name": "火锅",
+          "review": "很正宗的重庆火锅 总店小味道好 新店大味道差点",
+          "score10": 9.6
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E9%98%AE%E4%B8%89%E5%AC%A2%E7%81%AB%E9%94%85%20%E6%B7%B1%E5%9C%B3%20%E5%AE%9D%E5%AE%89",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_7851ef0b",
+      "slug": "三道功",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "三道功",
+      "branch": null,
+      "category": "外卖",
+      "cuisineTags": [
+        "川菜"
+      ],
+      "reviewText": "好香啊 很久没吃到阳间外卖了 真是饿了",
+      "dishes": [
+        {
+          "name": "冒烤鸭",
+          "review": "好香啊 很久没吃到阳间外卖了 真是饿了",
+          "score10": 9.4
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2025-08",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E4%B8%89%E9%81%93%E5%8A%9F%20%E6%B7%B1%E5%9C%B3",
+      "lng": 113.942675,
+      "lat": 22.548775,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_7a478184",
+      "slug": "山凤凰-番禺",
+      "regionSlug": "guangzhou",
+      "actualCity": "广州",
+      "brand": "山凤凰",
+      "branch": "番禺",
+      "category": "饭店",
+      "cuisineTags": [
+        "湘菜"
+      ],
+      "reviewText": "1. 鸡汤\n  2. 小炒鸡肉\n没有不好吃的菜 性价比很高",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-02",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E5%B1%B1%E5%87%A4%E5%87%B0%20%E5%B9%BF%E5%B7%9E%20%E7%95%AA%E7%A6%BA",
+      "lng": 113.348233,
+      "lat": 23.003281,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_8c01a7b8",
+      "slug": "山禾田-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "山禾田",
+      "branch": "南山",
+      "category": "饭店",
+      "cuisineTags": [
+        "日料"
+      ],
+      "reviewText": "比较均衡的小店 也不是说很有特色\n寿喜烧可以尝尝",
+      "dishes": [
+        {
+          "name": "寿喜烧",
+          "review": "比较均衡的小店 也不是说很有特色\n寿喜烧可以尝尝",
+          "score10": 9.4
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E5%B1%B1%E7%A6%BE%E7%94%B0%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": 113.9242,
+      "lat": 22.528283,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_35b3278a",
+      "slug": "什么巷子火锅要找下聊天记录-宝安",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "什么巷子火锅 要找下聊天记录",
+      "branch": "宝安",
+      "category": "饭店",
+      "cuisineTags": [
+        "火锅"
+      ],
+      "reviewText": "新安新店的时候去的 很正宗 跟在重庆吃区别不大",
+      "dishes": [
+        {
+          "name": "火锅",
+          "review": "新安新店的时候去的 很正宗 跟在重庆吃区别不大",
+          "score10": 9.6
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E4%BB%80%E4%B9%88%E5%B7%B7%E5%AD%90%E7%81%AB%E9%94%85%20%E8%A6%81%E6%89%BE%E4%B8%8B%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%20%E6%B7%B1%E5%9C%B3%20%E5%AE%9D%E5%AE%89",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_c25f71b1",
+      "slug": "婶婶铺泡菜粉-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "婶婶铺泡菜粉",
+      "branch": "南山",
+      "category": "饭店",
+      "cuisineTags": [
+        "川菜"
+      ],
+      "reviewText": "吃了不下50次吧 夯完了",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-02",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E5%A9%B6%E5%A9%B6%E9%93%BA%E6%B3%A1%E8%8F%9C%E7%B2%89%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_89e84223",
+      "slug": "寿司郎-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "寿司郎",
+      "branch": "南山",
+      "category": "饭店",
+      "cuisineTags": [
+        "日料"
+      ],
+      "reviewText": "见附件",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-02",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E5%AF%BF%E5%8F%B8%E9%83%8E%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_6acad1bb",
+      "slug": "喜上鸽-罗湖",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "喜上鸽",
+      "branch": "罗湖",
+      "category": "饭店",
+      "cuisineTags": [
+        "粤菜"
+      ],
+      "reviewText": "✅第一次吃到我觉得完全没有腥味怪味的鸽子，盐焗+红烧都可以 纯香\n✅红葱头鸡\n\n❌扇贝粉丝 性价比低了\n\n🔘肥牛juejue煲 好吃但小贵 可以一试",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-02",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E5%96%9C%E4%B8%8A%E9%B8%BD%20%E6%B7%B1%E5%9C%B3%20%E7%BD%97%E6%B9%96",
+      "lng": 114.126228,
+      "lat": 22.539963,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_1343de1b",
+      "slug": "先启半步癫-福田",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "先启半步癫",
+      "branch": "福田",
+      "category": "饭店",
+      "cuisineTags": [
+        "川菜"
+      ],
+      "reviewText": "会推荐福田那家 是首家店\n土豆丝 肥肠 辣子鸡是必点的只是吃腻了\n性价比没话说",
+      "dishes": [
+        {
+          "name": "土豆丝 肥肠 辣子鸡",
+          "review": "会推荐福田那家 是首家店\n土豆丝 肥肠 辣子鸡是必点的只是吃腻了\n性价比没话说",
+          "score10": 9.4
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2025-09",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E5%85%88%E5%90%AF%E5%8D%8A%E6%AD%A5%E7%99%AB%20%E6%B7%B1%E5%9C%B3%20%E7%A6%8F%E7%94%B0",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_04a3c0c6",
+      "slug": "香火肥肠-福田",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "香火肥肠",
+      "branch": "福田",
+      "category": "饭店",
+      "cuisineTags": [
+        "火锅"
+      ],
+      "reviewText": "车公庙店比南山店好很多 南山店其实不会推荐 有活动的时候是性价比夯中夯",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2025-09",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "%E9%A6%99%E7%81%AB%E8%82%A5%E8%82%A0%20%E6%B7%B1%E5%9C%B3%20%E7%A6%8F%E7%94%B0",
+      "lng": 114.034235,
+      "lat": 22.521433,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_3fd0194e",
+      "slug": "鑫泰-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "鑫泰",
+      "branch": "南山",
+      "category": "饭店",
+      "cuisineTags": [
+        "泰料"
+      ],
+      "reviewText": "万象天地性价比都多少少有问题 但确实是好吃的 咖喱牛肉吃",
+      "dishes": [
+        {
+          "name": "咖喱牛肉",
+          "review": "万象天地性价比都多少少有问题 但确实是好吃的 咖喱牛肉吃",
+          "score10": 9.4
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2024-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E9%91%AB%E6%B3%B0%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_70348d48",
+      "slug": "一个锅-宝安",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "一个锅",
+      "branch": "宝安",
+      "category": "饭店",
+      "cuisineTags": [
+        "韩料"
+      ],
+      "reviewText": "份量大 价格美丽 很小环境一般的店",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E4%B8%80%E4%B8%AA%E9%94%85%20%E6%B7%B1%E5%9C%B3%20%E5%AE%9D%E5%AE%89",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_b30bafdd",
+      "slug": "kuddo-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "kuddo",
+      "branch": "南山",
+      "category": "饮品",
+      "cuisineTags": [
+        "奶咖"
+      ],
+      "reviewText": "夯",
+      "dishes": [
+        {
+          "name": "云朵黑莓",
+          "score10": null
+        },
+        {
+          "name": "豆乳拿铁",
+          "review": "夯",
+          "score10": 9.4
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-03",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "kuddo%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_8104bdfc",
+      "slug": "paperstone",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "paperstone",
+      "branch": null,
+      "category": "烘焙",
+      "cuisineTags": [
+        "面包"
+      ],
+      "reviewText": "T45果酿 肉桂 橙丁 传统法包天花板 吐司也不错的",
+      "dishes": [
+        {
+          "name": "T45果酿",
+          "review": "T45果酿 肉桂 橙丁 传统法包天花板 吐司也不错的",
+          "score10": 9.6
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "paperstone%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    },
+    {
+      "id": "r_c8f50ec3",
+      "slug": "patpong-南山",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "patpong",
+      "branch": "南山",
+      "category": "饭店",
+      "cuisineTags": [
+        "泰料"
+      ],
+      "reviewText": "只记得好吃 具体吃啥了想不起 汤不错吧",
+      "dishes": [],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2024-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "patpong%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
+      "lng": 113.923203,
+      "lat": 22.528232,
+      "coordSystem": "GCJ02",
+      "poiConfidence": "medium",
+      "contentUpdatedAt": "2026-03-02",
+      "coverImage": null
+    },
+    {
+      "id": "r_daa04b03",
+      "slug": "pokipoki",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "pokipoki",
+      "branch": null,
+      "category": "饭店",
+      "cuisineTags": [
+        "泰料"
+      ],
+      "reviewText": "好吃的 不过疑似店都倒闭了？喜欢绿咖喱",
+      "dishes": [
+        {
+          "name": "绿咖喱",
+          "review": "好吃的 不过疑似店都倒闭了？喜欢绿咖喱",
+          "score10": 9.4
+        }
+      ],
+      "score10": null,
+      "scoreScope": "none",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2023-12",
+      "visitedAtPrecision": "month",
+      "inRecent": false,
+      "multiShop": true,
+      "amapQuery": "pokipoki%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "contentUpdatedAt": "2026-03-16",
+      "coverImage": null
+    }
+  ]
+}

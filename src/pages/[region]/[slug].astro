@@ -1,0 +1,109 @@
+---
+import Layout from "../../components/Layout.astro";
+import { restaurants, regionName, fmtScore, fmtVisited, amapUrl, LEVEL_LABEL, regionPath, type PubRestaurant } from "../../lib/food-data";
+
+export function getStaticPaths() {
+  return restaurants.map((r) => ({ params: { region: r.regionSlug, slug: r.slug }, props: { r } }));
+}
+interface Props { r: PubRestaurant }
+const { r } = Astro.props;
+const score = fmtScore(r.score10);
+const visited = fmtVisited(r);
+const title = `${r.brand}${r.branch ? " · " + r.branch : ""}`;
+---
+<Layout title={title} description={`${r.brand}${r.branch ? "（" + r.branch + "）" : ""} · ${regionName(r.regionSlug)} · 本人实吃记录`}>
+  <article class="page page-inner detail">
+    <nav class="crumb" aria-label="面包屑">
+      <a href={regionPath(r.regionSlug)}>{regionName(r.regionSlug)}</a>
+      <span aria-hidden="true"> / </span>
+      <span>{r.brand}{r.branch && ` · ${r.branch}`}</span>
+    </nav>
+
+    {/* 图片：无图文字占位，不为缺图生成假食物（P5 补图后自动出现） */}
+    {r.coverImage
+      ? <div class="photo"><img src={r.coverImage} alt={`${r.brand}实拍`} /></div>
+      : <div class="photo nophoto"><span>暂无照片</span><span class="nophoto-sub">实拍图补上后会显示在这里</span></div>}
+
+    <header class="d-head">
+      <h1 class="d-name">{r.brand}{r.branch && <span class="d-branch"> · {r.branch}</span>}</h1>
+      <div class="d-tags">
+        <span class:list={["tag", r.recommendationLevel === "wubiChi" ? "tag--wubi" : r.recommendationLevel === "yingChiBang" ? "tag--fill" : ""]}>
+          {LEVEL_LABEL[r.recommendationLevel]}
+        </span>
+        {r.cuisineTags.map((c) => <span class="tag">{c}</span>)}
+      </div>
+      {score && <p class="d-score"><span class="num">{score}</span></p>}
+      {r.reviewText && <p class="d-review">{r.reviewText}</p>}
+    </header>
+
+    {r.dishes.length > 0 && (
+      <section class="d-block">
+        <h2 class="section-title">推荐单品</h2>
+        <ul class="dish-list">
+          {r.dishes.map((d) => (
+            <li class="dish">
+              <span class="dish-name">{d.name}</span>
+              {d.score10 != null && <span class="num dish-score">{fmtScore(d.score10)}</span>}
+              {d.review && <p class="dish-review">{d.review}</p>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <section class="d-block">
+      <h2 class="section-title">怎么去</h2>
+      <div class="go card">
+        <p class="go-addr">{r.actualCity}{r.branch ? ` · ${r.branch}` : ""}</p>
+        <a class="go-btn" href={amapUrl(r)} target="_blank" rel="noopener noreferrer">在高德地图打开</a>
+        <p class="go-note">搜索落地页不等于精确门店命中</p>
+      </div>
+    </section>
+
+    {r.multiShop && (
+      <section class="d-block">
+        <h2 class="section-title">其他分店</h2>
+        <div class="empty">这家店有其他分店，分店信息核实后展示。<br />其他分店 · 未实吃</div>
+      </section>
+    )}
+
+    <footer class="d-foot">
+      {visited && <p>实吃于 <span class="num">{visited}</span>{r.visitedAtPrecision === "month" && "（月份精度）"}</p>}
+      <p>内容更新 <span class="num">{r.contentUpdatedAt.replaceAll("-", ".")}</span></p>
+    </footer>
+  </article>
+</Layout>
+
+<style>
+  .detail { padding-top: var(--s-8); max-width: 760px; display: grid; gap: var(--s-6); }
+  .crumb { font-size: var(--fs-sub); color: var(--ink-2); }
+  .photo { border-radius: var(--r-image); overflow: hidden; }
+  .nophoto {
+    aspect-ratio: 4 / 3; background: var(--paper-2);
+    display: grid; place-content: center; gap: var(--s-2); text-align: center;
+    color: var(--ink-3); border-radius: var(--r-image);
+  }
+  .nophoto-sub { font-size: var(--fs-sub); }
+  .d-head { display: grid; gap: var(--s-3); }
+  .d-name { font-size: clamp(2rem, 3vw + 1rem, 3rem); letter-spacing: var(--ls-display); }
+  .d-branch { color: var(--ink-2); font-size: 0.6em; font-weight: 500; }
+  .d-tags { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+  .d-score .num { font-size: 1.5rem; font-weight: 700; }
+  .d-review { max-width: 65ch; }
+  .d-block { display: grid; gap: var(--s-4); }
+  .dish-list { list-style: none; margin: 0; padding: 0; display: grid; }
+  .dish { padding: var(--s-3) 0; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }
+  .dish:last-child { border-bottom: 0; }
+  .dish-name { font-weight: 600; }
+  .dish-score { color: var(--ink-2); font-size: var(--fs-sub); }
+  .dish-review { font-size: var(--fs-sub); color: var(--ink-2); max-width: 65ch; }
+  .go { padding: var(--s-4); display: grid; gap: var(--s-3); justify-items: start; }
+  .go-addr { font-weight: 550; }
+  .go-btn {
+    display: inline-flex; align-items: center; min-height: var(--touch); padding: 0 var(--s-6);
+    background: var(--ink); color: var(--paper); border-radius: var(--r-chip); font-weight: 600;
+  }
+  .go-btn:hover { text-decoration: none; opacity: 0.88; }
+  .go-note { font-size: var(--fs-sub); color: var(--ink-3); }
+  .d-foot { display: grid; gap: var(--s-1); color: var(--ink-2); font-size: var(--fs-sub); border-top: 1px solid var(--line); padding-top: var(--s-4); }
+</style>

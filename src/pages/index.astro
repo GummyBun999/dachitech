@@ -1,0 +1,95 @@
+---
+import Layout from "../components/Layout.astro";
+import RestaurantCard from "../components/RestaurantCard.astro";
+import {
+  REGION_ORDER, regionName, regionCount, regionPath,
+  recentEats, mustEats, topList, restaurants, lastUpdated, fmtVisited,
+} from "../lib/food-data";
+
+const updated = lastUpdated();
+const latest = [...restaurants].sort((a, b) => b.contentUpdatedAt.localeCompare(a.contentUpdatedAt)).slice(0, 6);
+---
+<Layout>
+  {/* 品牌海报块：fal 展示语域，首尾同色闭环 */}
+  <section class="hero">
+    <div class="page page-inner">
+      <p class="hero-kicker">个人实吃地图</p>
+      <h1 class="display">大吃特吃</h1>
+      <p class="hero-desc">深圳及其他地方的本人实吃记录。</p>
+      {updated && <p class="hero-updated">最后更新 <span class="num">{updated}</span></p>}
+    </div>
+  </section>
+
+  {/* 地区入口：数量为同一发布数据集的真实计数 */}
+  <section class="page page-inner block">
+    <div class="region-grid">
+      {REGION_ORDER.map((s) => (
+        <a class="region-entry" href={regionPath(s)}>
+          <span class="region-name">{regionName(s)}</span>
+          <span class="num region-count">{regionCount(s)} 家</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {/* 最近吃了：无数据则收起（Q3 窗口内当前真实为 0） */}
+  {recentEats.length > 0 && (
+    <section class="page page-inner block">
+      <h2 class="section-title">最近吃了</h2>
+      <div class="card-grid">{recentEats.map((r) => <RestaurantCard r={r} />)}</div>
+    </section>
+  )}
+
+  {mustEats.length > 0 && (
+    <section class="page page-inner block">
+      <h2 class="section-title">务必吃</h2>
+      <div class="card-grid">{mustEats.map((r) => <RestaurantCard r={r} />)}</div>
+    </section>
+  )}
+
+  {topList.length > 0 && (
+    <section class="page page-inner block">
+      <h2 class="section-title">应吃榜</h2>
+      <div class="card-grid">{topList.map((r) => <RestaurantCard r={r} />)}</div>
+    </section>
+  )}
+
+  {/* 最新收录（有数据时的真实内容） */}
+  {latest.length > 0 && (
+    <section class="page page-inner block">
+      <h2 class="section-title">收录 {restaurants.length} 家</h2>
+      <div class="card-grid">{latest.map((r) => <RestaurantCard r={r} />)}</div>
+    </section>
+  )}
+
+  {/* 闭环：与首屏同色收尾 */}
+  <section class="closing">
+    <div class="page page-inner">
+      <p>吃出来的，不是搜出来的。</p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero { background: var(--brand); padding-block: var(--s-16) var(--s-12); color: var(--ink); }
+  .hero-kicker { font-size: var(--fs-sub); font-weight: 600; margin-bottom: var(--s-4); }
+  .hero-desc { margin-top: var(--s-4); font-size: clamp(1.125rem, 1vw + 0.9rem, 1.5rem); letter-spacing: var(--ls-text); }
+  .hero-updated { margin-top: var(--s-6); font-size: var(--fs-sub); color: var(--ink); opacity: 0.72; }
+  .block { margin-top: var(--s-12); display: grid; gap: var(--s-6); }
+  .region-grid { display: grid; grid-template-columns: 1fr; gap: var(--s-3); }
+  @media (min-width: 768px) { .region-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .region-grid { grid-template-columns: repeat(3, 1fr); } }
+  .region-entry {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: var(--s-6); border: 1px solid var(--line); border-radius: var(--r-card);
+    color: var(--ink); transition: transform var(--t), opacity var(--t);
+  }
+  .region-entry:hover { text-decoration: none; background: var(--brand-soft); }
+  .region-name { font-size: var(--fs-shop); font-weight: 600; letter-spacing: var(--ls-text); }
+  .region-count { color: var(--ink-2); font-size: var(--fs-sub); }
+  .card-grid { display: grid; grid-template-columns: 1fr; gap: var(--s-4); }
+  @media (min-width: 768px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .card-grid { grid-template-columns: repeat(3, 1fr); } }
+  .closing { background: var(--brand); margin-top: var(--s-16); padding-block: var(--s-12); }
+  .closing p { font-size: var(--fs-section); font-weight: 600; letter-spacing: var(--ls-display); }
+</style>
