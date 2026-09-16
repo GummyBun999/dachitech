@@ -2,6 +2,7 @@
 import Layout from "../components/Layout.astro";
 import RestaurantCard from "../components/RestaurantCard.astro";
 import { REGION_ORDER, regionName, byRegion, isEaten, fmtVisited } from "../lib/food-data";
+import { cuisineGroupsOf, CUISINE_GROUP_ORDER } from "../lib/cuisine";
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -32,8 +33,9 @@ function amapCfg() {
 }
 const amap = amapCfg();
 
-// 筛选维度来自真实数据
-const cuisines = [...new Set(list.flatMap((r) => r.cuisineTags))].sort((a, b) => a.localeCompare(b, "zh"));
+// 筛选维度：品类归并成大类（用户 2026-09-16），按固定顺序展示
+const presentGroups = new Set(list.flatMap((r) => cuisineGroupsOf(r.cuisineTags)));
+const cuisines = CUISINE_GROUP_ORDER.filter((g) => presentGroups.has(g));
 const LEVELS = [
   { key: "wubiChi", label: "务必吃" },
   { key: "yingChiBang", label: "应吃榜" },

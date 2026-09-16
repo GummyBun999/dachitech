@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T07:52:46.715Z",
+  "generatedAt": "2026-09-16T12:13:45.932Z",
   "policyVersion": "2026-09-16",
   "recentWindowDays": 120,
   "source": "food-sheet",
@@ -59,7 +59,7 @@
       "cuisineTags": [
         "韩料"
       ],
-      "reviewText": "8.5",
+      "reviewText": "",
       "dishes": [
         {
           "name": "山葵雪花和牛肋条 / 五花肉炒饭",
@@ -93,7 +93,7 @@
       "cuisineTags": [
         "日料"
       ],
-      "reviewText": "7.5",
+      "reviewText": "",
       "dishes": [
         {
           "name": "日式烧烤/烤肉；横膈膜这次没点",
@@ -127,7 +127,7 @@
       "cuisineTags": [
         "粤菜"
       ],
-      "reviewText": "7",
+      "reviewText": "",
       "dishes": [
         {
           "name": "陈村粉 烧鹅 白切鸡",
@@ -161,7 +161,7 @@
       "cuisineTags": [
         "日料"
       ],
-      "reviewText": "7",
+      "reviewText": "",
       "dishes": [
         {
           "name": "金枪鱼\n鹅肝\n抹茶布丁",
@@ -195,7 +195,7 @@
       "cuisineTags": [
         "日料"
       ],
-      "reviewText": "7",
+      "reviewText": "",
       "dishes": [
         {
           "name": "五月活动 / 焦糖鹅肝寿司",
@@ -1680,7 +1680,7 @@
       "cuisineTags": [
         "日料"
       ],
-      "reviewText": "8",
+      "reviewText": "",
       "dishes": [
         {
           "name": "日式炸牛排 / 乌冬面",

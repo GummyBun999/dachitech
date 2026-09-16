@@ -1,5 +1,6 @@
 ---
 import { fmtScore, fmtVisited, LEVEL_LABEL, detailPath, navUrl, navProvider, type PubRestaurant } from "../lib/food-data";
+import { cuisineGroupsOf } from "../lib/cuisine";
 interface Props { r: PubRestaurant }
 const { r } = Astro.props;
 const score = fmtScore(r.score10);
@@ -14,7 +15,7 @@ const searchHay = [r.brand, r.branch ?? "", ...r.dishes.map((d) => d.name), ...r
   data-region={r.regionSlug}
   data-closed={r.closed ? "1" : undefined}
   data-level={r.recommendationLevel}
-  data-cuisines={r.cuisineTags.join("|")}
+  data-cuisines={cuisineGroupsOf(r.cuisineTags).join("|")}
   data-search={searchHay}
   data-lng={r.lng ?? undefined}
   data-lat={r.lat ?? undefined}
