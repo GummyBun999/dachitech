@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T12:13:45.932Z",
+  "generatedAt": "2026-09-17T04:23:43.939Z",
   "policyVersion": "2026-09-16",
   "recentWindowDays": 120,
   "source": "food-sheet",
@@ -13,7 +13,7 @@
     {
       "slug": "zhongshan",
       "name": "中山",
-      "count": 0,
+      "count": 5,
       "wait": 0
     },
     {
@@ -79,7 +79,162 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
+      "coverImage": null
+    },
+    {
+      "id": "r_5c72d39f",
+      "slug": "国灵肠粉",
+      "regionSlug": "zhongshan",
+      "actualCity": "中山",
+      "brand": "国灵肠粉",
+      "branch": null,
+      "category": null,
+      "cuisineTags": [
+        "肠粉"
+      ],
+      "reviewText": "",
+      "dishes": [],
+      "score10": 8.5,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "wubiChi",
+      "visitedAt": "2026-09-15",
+      "visitedAtPrecision": "day",
+      "inRecent": true,
+      "multiShop": false,
+      "amapQuery": "%E5%9B%BD%E7%81%B5%E8%82%A0%E7%B2%89%20%E4%B8%AD%E5%B1%B1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": false,
+      "contentUpdatedAt": "2026-09-17",
+      "coverImage": null
+    },
+    {
+      "id": "r_16ab10fe",
+      "slug": "正斗面家-三乡",
+      "regionSlug": "zhongshan",
+      "actualCity": "中山",
+      "brand": "正斗面家",
+      "branch": "三乡",
+      "category": null,
+      "cuisineTags": [
+        "粤菜"
+      ],
+      "reviewText": "",
+      "dishes": [
+        {
+          "name": "云吞面",
+          "score10": null
+        }
+      ],
+      "score10": 8.5,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "wubiChi",
+      "visitedAt": "2026-09-13",
+      "visitedAtPrecision": "day",
+      "inRecent": true,
+      "multiShop": false,
+      "amapQuery": "%E6%AD%A3%E6%96%97%E9%9D%A2%E5%AE%B6%20%E4%B8%AD%E5%B1%B1%20%E4%B8%89%E4%B9%A1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": false,
+      "contentUpdatedAt": "2026-09-17",
+      "coverImage": null
+    },
+    {
+      "id": "r_cfab56ee",
+      "slug": "乾林炒鸡-幸福天地店",
+      "regionSlug": "zhongshan",
+      "actualCity": "中山",
+      "brand": "乾林炒鸡",
+      "branch": "幸福天地店",
+      "category": null,
+      "cuisineTags": [
+        "炒鸡"
+      ],
+      "reviewText": "",
+      "dishes": [],
+      "score10": 8,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "yingChiBang",
+      "visitedAt": "2026-09-15",
+      "visitedAtPrecision": "day",
+      "inRecent": true,
+      "multiShop": false,
+      "amapQuery": "%E4%B9%BE%E6%9E%97%E7%82%92%E9%B8%A1%20%E4%B8%AD%E5%B1%B1%20%E5%B9%B8%E7%A6%8F%E5%A4%A9%E5%9C%B0%E5%BA%97",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": false,
+      "contentUpdatedAt": "2026-09-17",
+      "coverImage": null
+    },
+    {
+      "id": "r_bc8fb461",
+      "slug": "雀鸟轩海鲜渔村-三乡",
+      "regionSlug": "zhongshan",
+      "actualCity": "中山",
+      "brand": "雀鸟轩海鲜渔村",
+      "branch": "三乡",
+      "category": null,
+      "cuisineTags": [
+        "海鲜"
+      ],
+      "reviewText": "",
+      "dishes": [],
+      "score10": 8,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "yingChiBang",
+      "visitedAt": "2026-09-13",
+      "visitedAtPrecision": "day",
+      "inRecent": true,
+      "multiShop": false,
+      "amapQuery": "%E9%9B%80%E9%B8%9F%E8%BD%A9%E6%B5%B7%E9%B2%9C%E6%B8%94%E6%9D%91%20%E4%B8%AD%E5%B1%B1%20%E4%B8%89%E4%B9%A1",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": false,
+      "contentUpdatedAt": "2026-09-17",
+      "coverImage": null
+    },
+    {
+      "id": "r_d5510e5e",
+      "slug": "亚金金-柏苑路店",
+      "regionSlug": "zhongshan",
+      "actualCity": "中山",
+      "brand": "亚金金",
+      "branch": "柏苑路店",
+      "category": null,
+      "cuisineTags": [
+        "早茶"
+      ],
+      "reviewText": "",
+      "dishes": [
+        {
+          "name": "早茶",
+          "score10": null
+        }
+      ],
+      "score10": 8,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "yingChiBang",
+      "visitedAt": "2026-09-14",
+      "visitedAtPrecision": "day",
+      "inRecent": true,
+      "multiShop": false,
+      "amapQuery": "%E4%BA%9A%E9%87%91%E9%87%91%20%E4%B8%AD%E5%B1%B1%20%E6%9F%8F%E8%8B%91%E8%B7%AF%E5%BA%97",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": false,
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -113,7 +268,7 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -147,7 +302,7 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -181,7 +336,7 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -215,7 +370,7 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -245,7 +400,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -279,7 +434,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -313,7 +468,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -347,7 +502,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -376,7 +531,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -410,7 +565,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -444,7 +599,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -478,7 +633,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -507,7 +662,7 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -536,7 +691,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -570,7 +725,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -604,7 +759,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -638,7 +793,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -672,7 +827,7 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -701,7 +856,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -730,7 +885,7 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -764,7 +919,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -798,7 +953,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -832,7 +987,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -866,7 +1021,7 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -900,7 +1055,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -934,7 +1089,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -964,7 +1119,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -998,7 +1153,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1032,7 +1187,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1061,7 +1216,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1095,7 +1250,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1129,7 +1284,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1163,7 +1318,7 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1192,7 +1347,7 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1226,7 +1381,7 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1260,7 +1415,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1289,7 +1444,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1318,7 +1473,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1347,7 +1502,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1376,7 +1531,7 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1410,7 +1565,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1439,7 +1594,7 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1473,7 +1628,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1502,7 +1657,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1531,7 +1686,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1569,7 +1724,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1603,7 +1758,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1632,7 +1787,7 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1666,7 +1821,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1700,7 +1855,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": true,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1734,7 +1889,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": true,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
@@ -1768,7 +1923,7 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": true,
-      "contentUpdatedAt": "2026-09-16",
+      "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     }
   ]
