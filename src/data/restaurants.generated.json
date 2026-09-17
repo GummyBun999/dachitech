@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T04:23:43.939Z",
+  "generatedAt": "2026-09-17T04:27:25.257Z",
   "policyVersion": "2026-09-16",
   "recentWindowDays": 120,
   "source": "food-sheet",
@@ -7,7 +7,7 @@
     {
       "slug": "shenzhen",
       "name": "深圳",
-      "count": 45,
+      "count": 51,
       "wait": 0
     },
     {
@@ -79,6 +79,9 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": 120,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -108,6 +111,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -142,6 +148,51 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
+      "contentUpdatedAt": "2026-09-17",
+      "coverImage": null
+    },
+    {
+      "id": "r_f8141b23",
+      "slug": "宾宾的面包房",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "宾宾的面包房",
+      "branch": null,
+      "category": null,
+      "cuisineTags": [
+        "甜品",
+        "饮品"
+      ],
+      "reviewText": "",
+      "dishes": [
+        {
+          "name": "南瓜吐司",
+          "score10": null
+        },
+        {
+          "name": "番茄吐司",
+          "score10": null
+        }
+      ],
+      "score10": 8,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "yingChiBang",
+      "visitedAt": "2026-05-21",
+      "visitedAtPrecision": "day",
+      "inRecent": true,
+      "multiShop": false,
+      "amapQuery": "%E5%AE%BE%E5%AE%BE%E7%9A%84%E9%9D%A2%E5%8C%85%E6%88%BF%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -171,6 +222,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -200,6 +254,50 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
+      "contentUpdatedAt": "2026-09-17",
+      "coverImage": null
+    },
+    {
+      "id": "r_1dd1a0a3",
+      "slug": "天天天妇罗",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "天天天妇罗",
+      "branch": null,
+      "category": null,
+      "cuisineTags": [
+        "日料"
+      ],
+      "reviewText": "",
+      "dishes": [
+        {
+          "name": "鳗鱼",
+          "score10": null
+        },
+        {
+          "name": "香菇虾滑",
+          "score10": null
+        }
+      ],
+      "score10": 8,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "yingChiBang",
+      "visitedAt": "2026-05-31",
+      "visitedAtPrecision": "day",
+      "inRecent": true,
+      "multiShop": false,
+      "amapQuery": "%E5%A4%A9%E5%A4%A9%E5%A4%A9%E5%A6%87%E7%BD%97%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": false,
+      "avgPrice": 98,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -234,21 +332,25 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
       "id": "r_f573b614",
-      "slug": "大阪烧肉-BAKA一代（购物公园）",
+      "slug": "大阪烧肉",
       "regionSlug": "shenzhen",
       "actualCity": "深圳",
       "brand": "大阪烧肉",
-      "branch": "BAKA一代（购物公园）",
+      "branch": null,
       "category": null,
       "cuisineTags": [
-        "日料"
+        "日料",
+        "烤肉"
       ],
-      "reviewText": "",
+      "reviewText": "我们生日都去了 是好吃 但是本人对口感十分不敏感 get不到细糠",
       "dishes": [
         {
           "name": "日式烧烤/烤肉；横膈膜这次没点",
@@ -261,13 +363,246 @@
       "visitedAt": "2026-06-22",
       "visitedAtPrecision": "day",
       "inRecent": true,
-      "multiShop": false,
+      "multiShop": true,
       "amapQuery": "%E5%A4%A7%E9%98%AA%E7%83%A7%E8%82%89%20%E6%B7%B1%E5%9C%B3%20BAKA%E4%B8%80%E4%BB%A3%EF%BC%88%E8%B4%AD%E7%89%A9%E5%85%AC%E5%9B%AD%EF%BC%89",
       "lng": 114.05333,
       "lat": 22.536315,
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": 250,
+      "branches": [
+        {
+          "id": "r_f573b614",
+          "name": "BAKA一代（购物公园）",
+          "address": "",
+          "lng": 114.05333,
+          "lat": 22.536315,
+          "score10": 7.5,
+          "visitedAt": "2026-06-22",
+          "closed": false,
+          "amapQuery": "%E5%A4%A7%E9%98%AA%E7%83%A7%E8%82%89%20%E6%B7%B1%E5%9C%B3%20BAKA%E4%B8%80%E4%BB%A3%EF%BC%88%E8%B4%AD%E7%89%A9%E5%85%AC%E5%9B%AD%EF%BC%89"
+        },
+        {
+          "id": "r_3f0c55cd",
+          "name": "福田",
+          "address": "",
+          "lng": 114.05333,
+          "lat": 22.536315,
+          "score10": null,
+          "visitedAt": "2023-12",
+          "closed": false,
+          "amapQuery": "%E5%A4%A7%E9%98%AA%E7%83%A7%E8%82%89%20%E6%B7%B1%E5%9C%B3%20%E7%A6%8F%E7%94%B0"
+        }
+      ],
+      "address": "",
+      "contentUpdatedAt": "2026-09-17",
+      "coverImage": null
+    },
+    {
+      "id": "r_d7e01f6f",
+      "slug": "林鲜记",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "林鲜记",
+      "branch": null,
+      "category": null,
+      "cuisineTags": [],
+      "reviewText": "",
+      "dishes": [
+        {
+          "name": "炒饭",
+          "score10": null
+        }
+      ],
+      "score10": 7.5,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-05-05",
+      "visitedAtPrecision": "day",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E6%9E%97%E9%B2%9C%E8%AE%B0%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
+      "contentUpdatedAt": "2026-09-17",
+      "coverImage": null
+    },
+    {
+      "id": "r_3f7a7236",
+      "slug": "八刀汤",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "八刀汤",
+      "branch": null,
+      "category": null,
+      "cuisineTags": [
+        "粤菜"
+      ],
+      "reviewText": "",
+      "dishes": [
+        {
+          "name": "八刀汤瘦肉汤",
+          "score10": null
+        },
+        {
+          "name": "肉丸汤",
+          "score10": null
+        },
+        {
+          "name": "主食可配米饭米粉河粉",
+          "score10": null
+        }
+      ],
+      "score10": 7,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-05-13",
+      "visitedAtPrecision": "day",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E5%85%AB%E5%88%80%E6%B1%A4%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
+      "contentUpdatedAt": "2026-09-17",
+      "coverImage": null
+    },
+    {
+      "id": "r_d4e8e809",
+      "slug": "董老太婆蹄花",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "董老太婆蹄花",
+      "branch": null,
+      "category": null,
+      "cuisineTags": [
+        "中式"
+      ],
+      "reviewText": "",
+      "dishes": [
+        {
+          "name": "招牌白汤",
+          "score10": null
+        },
+        {
+          "name": "担担面",
+          "score10": null
+        },
+        {
+          "name": "蒜泥白肉",
+          "score10": null
+        }
+      ],
+      "score10": 7,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-05-26",
+      "visitedAtPrecision": "day",
+      "inRecent": true,
+      "multiShop": false,
+      "amapQuery": "%E8%91%A3%E8%80%81%E5%A4%AA%E5%A9%86%E8%B9%84%E8%8A%B1%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": false,
+      "avgPrice": 70,
+      "branches": [],
+      "address": "",
+      "contentUpdatedAt": "2026-09-17",
+      "coverImage": null
+    },
+    {
+      "id": "r_eb0ef234",
+      "slug": "高丽村",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "高丽村",
+      "branch": null,
+      "category": null,
+      "cuisineTags": [
+        "韩料"
+      ],
+      "reviewText": "",
+      "dishes": [
+        {
+          "name": "土豆脊骨汤",
+          "score10": null
+        },
+        {
+          "name": "石锅拌饭",
+          "score10": null
+        }
+      ],
+      "score10": 7,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-07-05",
+      "visitedAtPrecision": "day",
+      "inRecent": true,
+      "multiShop": false,
+      "amapQuery": "%E9%AB%98%E4%B8%BD%E6%9D%91%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": false,
+      "avgPrice": 100,
+      "branches": [],
+      "address": "",
+      "contentUpdatedAt": "2026-09-17",
+      "coverImage": null
+    },
+    {
+      "id": "r_e23f9a32",
+      "slug": "胡麻",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "胡麻",
+      "branch": null,
+      "category": null,
+      "cuisineTags": [
+        "其他"
+      ],
+      "reviewText": "",
+      "dishes": [
+        {
+          "name": "米线",
+          "score10": null
+        },
+        {
+          "name": "蛋糕",
+          "score10": null
+        }
+      ],
+      "score10": 7,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-05-20",
+      "visitedAtPrecision": "day",
+      "inRecent": false,
+      "multiShop": false,
+      "amapQuery": "%E8%83%A1%E9%BA%BB%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": false,
+      "avgPrice": 120,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -302,56 +637,29 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": 100,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
     {
       "id": "r_01c8ab1f",
-      "slug": "寿司郎1-海岸城",
+      "slug": "寿司郎",
       "regionSlug": "shenzhen",
       "actualCity": "深圳",
-      "brand": "寿司郎1",
-      "branch": "海岸城",
+      "brand": "寿司郎",
+      "branch": null,
       "category": null,
       "cuisineTags": [
         "日料"
       ],
-      "reviewText": "",
+      "reviewText": "见附件",
       "dishes": [
         {
           "name": "金枪鱼\n鹅肝\n抹茶布丁",
           "score10": null
-        }
-      ],
-      "score10": 7,
-      "scoreScope": "restaurant",
-      "recommendationLevel": "keyiChi",
-      "visitedAt": "2026-04-26",
-      "visitedAtPrecision": "day",
-      "inRecent": false,
-      "multiShop": false,
-      "amapQuery": "%E5%AF%BF%E5%8F%B8%E9%83%8E1%20%E6%B7%B1%E5%9C%B3%20%E6%B5%B7%E5%B2%B8%E5%9F%8E",
-      "lng": 113.935399,
-      "lat": 22.517659,
-      "coordSystem": "GCJ02",
-      "poiConfidence": null,
-      "closed": false,
-      "contentUpdatedAt": "2026-09-17",
-      "coverImage": null
-    },
-    {
-      "id": "r_c2900e2e",
-      "slug": "寿司郎2-KKONE",
-      "regionSlug": "shenzhen",
-      "actualCity": "深圳",
-      "brand": "寿司郎2",
-      "branch": "KKONE",
-      "category": null,
-      "cuisineTags": [
-        "日料"
-      ],
-      "reviewText": "",
-      "dishes": [
+        },
         {
           "name": "五月活动 / 焦糖鹅肝寿司",
           "score10": null
@@ -363,13 +671,136 @@
       "visitedAt": "2026-05-16",
       "visitedAtPrecision": "day",
       "inRecent": false,
-      "multiShop": false,
-      "amapQuery": "%E5%AF%BF%E5%8F%B8%E9%83%8E2%20%E6%B7%B1%E5%9C%B3%20KKONE",
-      "lng": 114.026721,
-      "lat": 22.527642,
+      "multiShop": true,
+      "amapQuery": "%E5%AF%BF%E5%8F%B8%E9%83%8E%20%E6%B7%B1%E5%9C%B3%20%E6%B5%B7%E5%B2%B8%E5%9F%8E",
+      "lng": 113.935399,
+      "lat": 22.517659,
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [
+        {
+          "id": "r_01c8ab1f",
+          "name": "海岸城",
+          "address": "",
+          "lng": 113.935399,
+          "lat": 22.517659,
+          "score10": 7,
+          "visitedAt": "2026-04-26",
+          "closed": false,
+          "amapQuery": "%E5%AF%BF%E5%8F%B8%E9%83%8E%20%E6%B7%B1%E5%9C%B3%20%E6%B5%B7%E5%B2%B8%E5%9F%8E"
+        },
+        {
+          "id": "r_c2900e2e",
+          "name": "KKONE",
+          "address": "",
+          "lng": 114.026721,
+          "lat": 22.527642,
+          "score10": 7,
+          "visitedAt": "2026-05-16",
+          "closed": false,
+          "amapQuery": "%E5%AF%BF%E5%8F%B8%E9%83%8E%20%E6%B7%B1%E5%9C%B3%20KKONE"
+        },
+        {
+          "id": "r_89e84223",
+          "name": "南山",
+          "address": "",
+          "lng": null,
+          "lat": null,
+          "score10": null,
+          "visitedAt": "2026-02",
+          "closed": false,
+          "amapQuery": "%E5%AF%BF%E5%8F%B8%E9%83%8E%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1"
+        }
+      ],
+      "address": "",
+      "contentUpdatedAt": "2026-09-17",
+      "coverImage": null
+    },
+    {
+      "id": "r_64d358cc",
+      "slug": "猪鲜生潮汕汤粉",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "猪鲜生潮汕汤粉",
+      "branch": null,
+      "category": null,
+      "cuisineTags": [
+        "粤菜"
+      ],
+      "reviewText": "",
+      "dishes": [
+        {
+          "name": "猪杂汤",
+          "score10": null
+        },
+        {
+          "name": "海鲜汤",
+          "score10": null
+        },
+        {
+          "name": "牛肉丸汤",
+          "score10": null
+        }
+      ],
+      "score10": 7,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-07-01",
+      "visitedAtPrecision": "day",
+      "inRecent": true,
+      "multiShop": false,
+      "amapQuery": "%E7%8C%AA%E9%B2%9C%E7%94%9F%E6%BD%AE%E6%B1%95%E6%B1%A4%E7%B2%89%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": false,
+      "avgPrice": 22,
+      "branches": [],
+      "address": "",
+      "contentUpdatedAt": "2026-09-17",
+      "coverImage": null
+    },
+    {
+      "id": "r_1c3eb592",
+      "slug": "fabric",
+      "regionSlug": "shenzhen",
+      "actualCity": "深圳",
+      "brand": "fabric",
+      "branch": null,
+      "category": null,
+      "cuisineTags": [
+        "西餐"
+      ],
+      "reviewText": "",
+      "dishes": [
+        {
+          "name": "黑松露千层土豆",
+          "score10": null
+        },
+        {
+          "name": "三文鱼松饼 /西班牙火腿",
+          "score10": null
+        }
+      ],
+      "score10": 7,
+      "scoreScope": "restaurant",
+      "recommendationLevel": "keyiChi",
+      "visitedAt": "2026-07-12",
+      "visitedAtPrecision": "day",
+      "inRecent": true,
+      "multiShop": false,
+      "amapQuery": "fabric%20%E6%B7%B1%E5%9C%B3",
+      "lng": null,
+      "lat": null,
+      "coordSystem": null,
+      "poiConfidence": null,
+      "closed": false,
+      "avgPrice": 100,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -400,6 +831,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -434,6 +868,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -468,6 +905,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -502,6 +942,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -531,6 +974,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -565,6 +1011,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -599,6 +1048,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -633,35 +1085,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-17",
-      "coverImage": null
-    },
-    {
-      "id": "r_3f0c55cd",
-      "slug": "大阪烧肉-福田",
-      "regionSlug": "shenzhen",
-      "actualCity": "深圳",
-      "brand": "大阪烧肉",
-      "branch": "福田",
-      "category": null,
-      "cuisineTags": [
-        "烤肉"
-      ],
-      "reviewText": "我们生日都去了 是好吃 但是本人对口感十分不敏感 get不到细糠",
-      "dishes": [],
-      "score10": null,
-      "scoreScope": "none",
-      "recommendationLevel": "keyiChi",
-      "visitedAt": "2023-12",
-      "visitedAtPrecision": "month",
-      "inRecent": false,
-      "multiShop": false,
-      "amapQuery": "%E5%A4%A7%E9%98%AA%E7%83%A7%E8%82%89%20%E6%B7%B1%E5%9C%B3%20%E7%A6%8F%E7%94%B0",
-      "lng": 114.05333,
-      "lat": 22.536315,
-      "coordSystem": "GCJ02",
-      "poiConfidence": null,
-      "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -691,6 +1117,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -725,6 +1154,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -759,6 +1191,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -793,6 +1228,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -827,6 +1265,9 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -856,6 +1297,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -885,6 +1329,9 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -919,6 +1366,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -953,6 +1403,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -987,6 +1440,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1021,6 +1477,9 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1055,6 +1514,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1089,6 +1551,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1119,6 +1584,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1153,6 +1621,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1187,6 +1658,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1216,6 +1690,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1250,6 +1727,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1284,6 +1764,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1318,6 +1801,9 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1347,6 +1833,9 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1381,6 +1870,9 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1415,6 +1907,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1444,35 +1939,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
-      "contentUpdatedAt": "2026-09-17",
-      "coverImage": null
-    },
-    {
-      "id": "r_89e84223",
-      "slug": "寿司郎-南山",
-      "regionSlug": "shenzhen",
-      "actualCity": "深圳",
-      "brand": "寿司郎",
-      "branch": "南山",
-      "category": null,
-      "cuisineTags": [
-        "日料"
-      ],
-      "reviewText": "见附件",
-      "dishes": [],
-      "score10": null,
-      "scoreScope": "none",
-      "recommendationLevel": "keyiChi",
-      "visitedAt": "2026-02",
-      "visitedAtPrecision": "month",
-      "inRecent": false,
-      "multiShop": false,
-      "amapQuery": "%E5%AF%BF%E5%8F%B8%E9%83%8E%20%E6%B7%B1%E5%9C%B3%20%E5%8D%97%E5%B1%B1",
-      "lng": null,
-      "lat": null,
-      "coordSystem": null,
-      "poiConfidence": null,
-      "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1502,6 +1971,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1531,6 +2003,9 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1565,6 +2040,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1594,6 +2072,9 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1628,6 +2109,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1657,6 +2141,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1686,6 +2173,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1724,6 +2214,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1758,6 +2251,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1787,6 +2283,9 @@
       "coordSystem": "GCJ02",
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1821,6 +2320,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": false,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1855,6 +2357,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": true,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1889,6 +2394,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": true,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     },
@@ -1923,6 +2431,9 @@
       "coordSystem": null,
       "poiConfidence": null,
       "closed": true,
+      "avgPrice": null,
+      "branches": [],
+      "address": "",
       "contentUpdatedAt": "2026-09-17",
       "coverImage": null
     }

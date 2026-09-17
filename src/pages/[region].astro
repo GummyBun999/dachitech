@@ -14,7 +14,7 @@ const name = regionName(region);
 const list = byRegion(region);
 const eatenCount = list.filter(isEaten).length;
 const waitCount = list.length - eatenCount;
-const withCoords = list.filter((r) => r.lng !== null).length;
+const withCoords = list.filter((r) => r.lng !== null || r.branches.some((b) => b.lng !== null)).length;
 const subLine = eatenCount > 0
   ? `${eatenCount} 家本人实吃${waitCount > 0 ? ` · ${waitCount} 家待吃` : ""}`
   : waitCount > 0 ? `暂无实吃 · ${waitCount} 家待吃` : "这个地区还没有记录";

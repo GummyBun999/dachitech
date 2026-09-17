@@ -11,9 +11,12 @@ export {}; // 使本文件成为模块，declare global 才生效
  * 边界：只渲染已验证坐标；缺凭据/SDK 失败降级；筛选同步 marker 显隐；与 city-browser 事件解耦。
  */
 type Pt = {
-  id: string; lng: number; lat: number; name: string; level: string;
+  pid: string;   // 点位唯一 id（单店=卡 id；多门店=门店 id）
+  id: string;    // 所属卡片 id
+  lng: number; lat: number; name: string; level: string;
   score: string; detail: string; amap: string;
 };
+const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
 
 declare global {
   interface Window {
@@ -44,18 +47,28 @@ function initMap(app: HTMLElement) {
   // 从卡片 DOM 收集有坐标的点（含导航/详情链接与评分，避免另存一份 JSON）
   const points: Pt[] = [];
   app.querySelectorAll<HTMLElement>(".rc").forEach((card) => {
-    const lng = parseFloat(card.dataset.lng || "");
-    const lat = parseFloat(card.dataset.lat || "");
-    if (!Number.isFinite(lng) || !Number.isFinite(lat)) return;
-    points.push({
+    const base = {
       id: card.dataset.id || "",
-      lng, lat,
       name: card.querySelector(".rc-name")?.textContent?.trim() || "",
       level: card.dataset.level || "keyiChi",
       score: card.querySelector(".rc-score .num")?.textContent?.trim() || "",
       detail: card.querySelector<HTMLAnchorElement>(".rc-name a")?.getAttribute("href") || "",
-      amap: card.querySelector<HTMLAnchorElement>(".rc-nav")?.getAttribute("href") || "",
-    });
+    };
+    const branches = card.querySelectorAll<HTMLElement>(".rc-br");
+    if (branches.length) {
+      // 同品牌多门店：每家有坐标的门店一个点，全部指向同一张卡
+      branches.forEach((b) => {
+        const lng = parseFloat(b.dataset.lng || ""), lat = parseFloat(b.dataset.lat || "");
+        if (!Number.isFinite(lng) || !Number.isFinite(lat)) return;
+        points.push({ ...base, pid: b.dataset.branchId || base.id, lng, lat,
+          name: `${base.name} · ${b.dataset.branch || ""}`, amap: b.dataset.nav || "" });
+      });
+      return;
+    }
+    const lng = parseFloat(card.dataset.lng || ""), lat = parseFloat(card.dataset.lat || "");
+    if (!Number.isFinite(lng) || !Number.isFinite(lat)) return;
+    points.push({ ...base, pid: base.id, lng, lat,
+      amap: card.querySelector<HTMLAnchorElement>(".rc-nav")?.getAttribute("href") || "" });
   });
 
   const cfg = window.__AMAP;
@@ -84,19 +97,22 @@ function initMap(app: HTMLElement) {
 
   let map: any = null;
   let info: any = null;
-  const markers = new Map<string, { marker: any; el: HTMLElement }>();
+  const markers = new Map<string, { marker: any; el: HTMLElement; cardId: string }>();
   let selecting = false; // 事件来源标记：防 marker↔card 递归
-  let activeId: string | null = null;
+  let activeId: string | null = null; // 当前选中的卡片 id
   // PC（有精确指针且支持 hover）：marker 悬停即预览；移动端不加 hover（用户要求不改）
   const hoverCapable = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   const LEVEL_CN: Record<string, string> = { wubiChi: "务必吃", yingChiBang: "应吃榜", keyiChi: "可以吃", daiChi: "待吃" };
 
-  function highlight(id: string | null) {
-    markers.forEach((m, mid) => m.el.classList.toggle("is-active", mid === id));
+  /** 高亮：卡片按卡 id，marker / 门店行按点位 id */
+  function highlight(p: Pt | null) {
+    markers.forEach((m, pid) => m.el.classList.toggle("is-active", !!p && pid === p.pid));
     app.querySelectorAll<HTMLElement>(".rc").forEach((c) =>
-      c.classList.toggle("rc--active", c.dataset.id === id));
-    activeId = id;
+      c.classList.toggle("rc--active", !!p && c.dataset.id === p.id));
+    app.querySelectorAll<HTMLElement>(".rc-br").forEach((b) =>
+      b.classList.toggle("is-active", !!p && b.dataset.branchId === p.pid));
+    activeId = p ? p.id : null;
   }
 
   function openInfo(p: Pt) {
@@ -104,11 +120,11 @@ function initMap(app: HTMLElement) {
     const box = document.createElement("div");
     box.className = "map-iw";
     box.innerHTML =
-      `<div class="map-iw-name">${p.name}</div>` +
-      `<div class="map-iw-meta">${LEVEL_CN[p.level] ?? ""}${p.score ? ` · <span class="num">${p.score}</span>` : ""}</div>` +
+      `<div class="map-iw-name">${esc(p.name)}</div>` +
+      `<div class="map-iw-meta">${LEVEL_CN[p.level] ?? ""}${p.score ? ` · <span class="num">${esc(p.score)}</span>` : ""}</div>` +
       `<div class="map-iw-actions">` +
-        `<a class="map-iw-nav" href="${p.amap}" target="_blank" rel="noopener noreferrer">导航</a>` +
-        `<a class="map-iw-detail" href="${p.detail}">详情</a>` +
+        `<a class="map-iw-nav" href="${esc(p.amap)}" target="_blank" rel="noopener noreferrer">导航</a>` +
+        `<a class="map-iw-detail" href="${esc(p.detail)}">详情</a>` +
       `</div>`;
     info.setContent(box);
     info.open(map, [p.lng, p.lat]);
@@ -118,7 +134,7 @@ function initMap(app: HTMLElement) {
     if (selecting) return;
     selecting = true;
     try {
-      highlight(p.id);
+      highlight(p);
       openInfo(p);
       const card = app.querySelector<HTMLElement>(`.rc[data-id="${p.id}"]`);
       if (card && fromMap) card.scrollIntoView({ block: "nearest", behavior: "smooth" });
@@ -145,8 +161,8 @@ function initMap(app: HTMLElement) {
         el.addEventListener("click", (ev) => { ev.stopPropagation(); selectPoint(p, true); });
         marker.on("click", () => selectPoint(p, true));
         // PC 悬停预览：只开信息窗 + 高亮，不滚动卡片（避免每次 hover 抖动）
-        if (hoverCapable) el.addEventListener("mouseenter", () => { if (!selecting) { highlight(p.id); openInfo(p); } });
-        markers.set(p.id, { marker, el });
+        if (hoverCapable) el.addEventListener("mouseenter", () => { if (!selecting) { highlight(p); openInfo(p); } });
+        markers.set(p.pid, { marker, el, cardId: p.id });
         all.push(marker);
       }
       map.add(all);
@@ -167,8 +183,8 @@ function initMap(app: HTMLElement) {
 
       // 筛选同步：被筛掉的卡片对应 marker 移除；当前选中被筛掉则关信息窗
       const syncMarkers = () => {
-        markers.forEach((m, id) => {
-          const card = app.querySelector<HTMLElement>(`.rc[data-id="${id}"]`);
+        markers.forEach((m) => {
+          const card = app.querySelector<HTMLElement>(`.rc[data-id="${m.cardId}"]`);
           m.marker.setMap(card?.hidden ? null : map);
         });
         if (activeId) {
@@ -181,11 +197,15 @@ function initMap(app: HTMLElement) {
 
       // 卡片 → 地图：点击卡片定位（店名/图片/导航链接除外）
       app.querySelectorAll<HTMLElement>(".rc").forEach((card) => {
-        if (!card.dataset.lng) return;
+        const own = points.filter((x) => x.id === card.dataset.id);
+        if (!own.length) return;
         card.addEventListener("click", (e) => {
-          if ((e.target as HTMLElement).closest("a")) return;
-          const p = points.find((x) => x.id === card.dataset.id);
-          if (p) selectPoint(p, false);
+          const t = e.target as HTMLElement;
+          if (t.closest("a")) return;
+          // 点在某个门店行上 → 定位到那家门店；否则定位到第一家有坐标的门店
+          const br = t.closest<HTMLElement>(".rc-br");
+          const p = (br && own.find((x) => x.pid === br.dataset.branchId)) || own[0];
+          selectPoint(p, false);
         });
       });
     } catch {

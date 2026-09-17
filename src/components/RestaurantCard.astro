@@ -1,12 +1,14 @@
 ---
-import { fmtScore, fmtVisited, LEVEL_LABEL, detailPath, navUrl, navProvider, type PubRestaurant } from "../lib/food-data";
+import { fmtScore, fmtVisited, fmtPrice, LEVEL_LABEL, detailPath, navUrl, branchNavUrl, navProvider, type PubRestaurant } from "../lib/food-data";
 import { cuisineGroupsOf } from "../lib/cuisine";
 interface Props { r: PubRestaurant }
 const { r } = Astro.props;
 const score = fmtScore(r.score10);
 const visited = fmtVisited(r);
-// 客户端筛选/搜索用（纯 DOM，无坐标；haystack 已小写化便于 substring 命中）
-const searchHay = [r.brand, r.branch ?? "", ...r.dishes.map((d) => d.name), ...r.cuisineTags]
+const price = fmtPrice(r);
+const multi = r.branches.length > 1;
+// 客户端筛选/搜索用（纯 DOM；haystack 已小写化便于 substring 命中）
+const searchHay = [r.brand, r.branch ?? "", ...r.branches.map((b) => b.name), ...r.dishes.map((d) => d.name), ...r.cuisineTags]
   .join(" ").toLowerCase();
 ---
 <article
@@ -17,8 +19,8 @@ const searchHay = [r.brand, r.branch ?? "", ...r.dishes.map((d) => d.name), ...r
   data-level={r.recommendationLevel}
   data-cuisines={cuisineGroupsOf(r.cuisineTags).join("|")}
   data-search={searchHay}
-  data-lng={r.lng ?? undefined}
-  data-lat={r.lat ?? undefined}
+  data-lng={!multi ? (r.lng ?? undefined) : undefined}
+  data-lat={!multi ? (r.lat ?? undefined) : undefined}
 >
   {/* 图片区 4:3：无图显示真实文字占位，不用示例图伪装实拍 */}
   <a class="rc-media" href={detailPath(r)} tabindex="-1" aria-hidden="true">
@@ -39,6 +41,7 @@ const searchHay = [r.brand, r.branch ?? "", ...r.dishes.map((d) => d.name), ...r
     </div>
     <div class="rc-meta">
       {r.cuisineTags.slice(0, 3).map((c) => <span class="rc-cuisine">{c}</span>)}
+      {price && <span class="rc-price num">{price}</span>}
       {visited && <span class="rc-visited num">{visited}</span>}
     </div>
     {score
@@ -47,15 +50,46 @@ const searchHay = [r.brand, r.branch ?? "", ...r.dishes.map((d) => d.name), ...r
     {r.dishes.length > 0 && (
       <p class="rc-dishes">推荐：{r.dishes.slice(0, 3).map((d) => d.name).join("、")}{r.dishes.length > 3 && ` 等${r.dishes.length}样`}</p>
     )}
-    <div class="rc-actions">
-      {/* 导航：独立可点，直开高德，不嵌套在店名/图片链接内（DEVELOPMENT-PLAN §7） */}
-      <a class="rc-nav" href={navUrl(r)} target="_blank" rel="noopener noreferrer" aria-label={`在${navProvider(r)}打开${r.brand}`}>
-        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/>
-        </svg>
-        导航
-      </a>
-    </div>
+
+    {multi ? (
+      /* 同品牌多门店：每家门店一行（名 + 地址 + 独立导航），发丝线分隔，不嵌套卡片 */
+      <div class="rc-branches" aria-label={`${r.branches.length} 家门店`}>
+        <p class="rc-branches-head">{r.branches.length} 家门店</p>
+        <ul>
+          {r.branches.map((b) => (
+            <li
+              class:list={["rc-br", { "rc-br--closed": b.closed }]}
+              data-branch-id={b.id}
+              data-branch={b.name}
+              data-lng={b.lng ?? undefined}
+              data-lat={b.lat ?? undefined}
+              data-nav={branchNavUrl(r, b)}
+            >
+              <div class="rc-br-text">
+                <span class="rc-br-name">{b.name || r.brand}{b.closed && <span class="rc-br-flag"> · 已关店</span>}</span>
+                {b.address && <span class="rc-br-addr">{b.address}</span>}
+              </div>
+              <a class="rc-nav rc-nav--sm" href={branchNavUrl(r, b)} target="_blank" rel="noopener noreferrer" aria-label={`在${navProvider(r)}打开${r.brand}${b.name}`}>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/>
+                </svg>
+                导航
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ) : (
+      <div class="rc-actions">
+        {/* 导航：独立可点，不嵌套在店名/图片链接内（DEVELOPMENT-PLAN §7） */}
+        <a class="rc-nav" href={navUrl(r)} target="_blank" rel="noopener noreferrer" aria-label={`在${navProvider(r)}打开${r.brand}`}>
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/>
+          </svg>
+          导航
+        </a>
+      </div>
+    )}
   </div>
 </article>
 
@@ -66,6 +100,7 @@ const searchHay = [r.brand, r.branch ?? "", ...r.dishes.map((d) => d.name), ...r
   .rc--closed .rc-media { filter: grayscale(1); }
   .rc--closed .rc-name a { color: var(--ink-2); }
   .rc-media { display: block; aspect-ratio: 4 / 3; background: var(--paper-2); }
+  .rc-media:hover, .rc-media:focus { text-decoration: none; }
   .rc-media img { width: 100%; height: 100%; object-fit: cover; }
   .rc-nophoto { width: 100%; height: 100%; display: grid; place-items: center; color: var(--ink-3); font-size: var(--fs-sub); }
   .rc-body { padding: var(--s-3) var(--s-4) var(--s-4); display: grid; gap: var(--s-2); }
@@ -74,8 +109,9 @@ const searchHay = [r.brand, r.branch ?? "", ...r.dishes.map((d) => d.name), ...r
   .rc-name a { color: var(--ink); }
   .rc-name a:hover { text-decoration: none; border-bottom: 2px solid var(--brand); }
   .rc-branch { color: var(--ink-2); font-weight: 500; font-size: 0.85em; }
-  .rc-meta { display: flex; align-items: center; gap: var(--s-2); font-size: var(--fs-sub); color: var(--ink-2); }
+  .rc-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 2px var(--s-2); font-size: var(--fs-sub); color: var(--ink-2); }
   .rc-cuisine + .rc-cuisine::before { content: "· "; }
+  .rc-price { color: var(--ink); font-weight: 600; }
   .rc-visited { margin-left: auto; color: var(--ink-3); }
   .rc-score { font-size: var(--fs-sub); }
   .rc-score .num { font-weight: 700; font-size: 1rem; }
@@ -85,8 +121,25 @@ const searchHay = [r.brand, r.branch ?? "", ...r.dishes.map((d) => d.name), ...r
   .rc-nav {
     display: inline-flex; align-items: center; gap: 5px; min-height: 36px; padding: 0 var(--s-4);
     border: 1px solid var(--line); border-radius: var(--r-chip);
-    font-size: var(--fs-sub); font-weight: 600; color: var(--ink);
+    font-size: var(--fs-sub); font-weight: 600; color: var(--ink); white-space: nowrap;
   }
   .rc-nav:hover { text-decoration: none; border-color: var(--op); color: var(--op); }
   .rc-nav svg { flex: none; }
+  .rc-nav--sm { min-height: 32px; padding: 0 var(--s-3); flex: none; }
+
+  /* 多门店：顶部发丝线 + 行间发丝线，扁平列表 */
+  .rc-branches { margin-top: var(--s-1); border-top: 1px solid var(--line); }
+  .rc-branches-head { padding-top: var(--s-2); font-size: 12px; font-weight: 600; color: var(--ink-3); }
+  .rc-branches ul { list-style: none; margin: 0; padding: 0; }
+  .rc-br {
+    display: flex; align-items: center; justify-content: space-between; gap: var(--s-3);
+    padding: var(--s-2) 0; border-bottom: 1px solid var(--line);
+  }
+  .rc-br:last-child { border-bottom: 0; padding-bottom: 0; }
+  .rc-br-text { display: grid; gap: 2px; min-width: 0; }
+  .rc-br-name { font-size: var(--fs-sub); font-weight: 600; color: var(--ink); }
+  .rc-br-addr { font-size: 12px; color: var(--ink-2); overflow-wrap: anywhere; }
+  .rc-br-flag { color: var(--ink-3); font-weight: 500; }
+  .rc-br--closed .rc-br-name { color: var(--ink-3); }
+  :global(.rc-br.is-active) .rc-br-name { color: var(--op); }
 </style>

@@ -14,7 +14,15 @@ export interface PubRestaurant {
   inRecent: boolean; multiShop: boolean; amapQuery: string;
   lng: number | null; lat: number | null; coordSystem: string | null; poiConfidence: string | null;
   closed: boolean;
+  avgPrice: number | null;   // 人均（元），选填
+  address: string;           // 单店地址，选填
+  branches: PubBranch[];     // 同品牌多门店；单店为空数组
   contentUpdatedAt: string; coverImage: string | null;
+}
+export interface PubBranch {
+  id: string; name: string; address: string;
+  lng: number | null; lat: number | null;
+  score10: number | null; visitedAt: string | null; closed: boolean; amapQuery: string;
 }
 
 export const data = generated as unknown as {
@@ -78,6 +86,13 @@ export const navUrl = (r: PubRestaurant) =>
     ? `https://www.google.com/maps/search/?api=1&query=${r.amapQuery}`
     : `https://uri.amap.com/search?keyword=${r.amapQuery}`;
 export const navProvider = (r: PubRestaurant) => (isOverseas(r) ? "Google 地图" : "高德地图");
+/** 多门店：单个门店的导航链接（供应商跟随所属地区） */
+export const branchNavUrl = (r: PubRestaurant, b: PubBranch) =>
+  isOverseas(r)
+    ? `https://www.google.com/maps/search/?api=1&query=${b.amapQuery}`
+    : `https://uri.amap.com/search?keyword=${b.amapQuery}`;
+/** 人均展示：¥N/人；无则 null */
+export const fmtPrice = (r: PubRestaurant) => (r.avgPrice ? `¥${Math.round(r.avgPrice)}/人` : null);
 /** @deprecated 用 navUrl；保留别名避免遗漏引用 */
 export const amapUrl = navUrl;
 

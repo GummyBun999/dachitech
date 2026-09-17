@@ -1,6 +1,6 @@
 ---
 import Layout from "../../components/Layout.astro";
-import { restaurants, regionName, fmtScore, fmtVisited, navUrl, navProvider, LEVEL_LABEL, regionPath, type PubRestaurant } from "../../lib/food-data";
+import { restaurants, regionName, fmtScore, fmtVisited, fmtPrice, navUrl, branchNavUrl, navProvider, LEVEL_LABEL, regionPath, type PubRestaurant } from "../../lib/food-data";
 
 export function getStaticPaths() {
   return restaurants.map((r) => ({ params: { region: r.regionSlug, slug: r.slug }, props: { r } }));
@@ -10,6 +10,8 @@ const { r } = Astro.props;
 const score = fmtScore(r.score10);
 const visited = fmtVisited(r);
 const title = `${r.brand}${r.branch ? " · " + r.branch : ""}`;
+const price = fmtPrice(r);
+const multi = r.branches.length > 1;
 ---
 <Layout title={title} description={`${r.brand}${r.branch ? "（" + r.branch + "）" : ""} · ${regionName(r.regionSlug)} · 本人实吃记录`}>
   <article class="page page-inner detail">
@@ -34,7 +36,12 @@ const title = `${r.brand}${r.branch ? " · " + r.branch : ""}`;
             </span>}
         {r.cuisineTags.map((c) => <span class="tag">{c}</span>)}
       </div>
-      {score && <p class="d-score"><span class="num">{score}</span></p>}
+      {(score || price) && (
+        <p class="d-score">
+          {score && <span class="num">{score}</span>}
+          {price && <span class="d-price">人均 <span class="num">{price.replace("/人", "")}</span></span>}
+        </p>
+      )}
       {r.reviewText && <p class="d-review">{r.reviewText}</p>}
     </header>
 
@@ -54,20 +61,29 @@ const title = `${r.brand}${r.branch ? " · " + r.branch : ""}`;
     )}
 
     <section class="d-block">
-      <h2 class="section-title">怎么去</h2>
-      <div class="go card">
-        <p class="go-addr">{r.actualCity}{r.branch ? ` · ${r.branch}` : ""}</p>
-        <a class="go-btn" href={navUrl(r)} target="_blank" rel="noopener noreferrer">在{navProvider(r)}打开</a>
-        <p class="go-note">搜索落地页不等于精确门店命中</p>
-      </div>
+      <h2 class="section-title">怎么去{multi && <span class="go-count"> · {r.branches.length} 家门店</span>}</h2>
+      {multi ? (
+        <ul class="go-list card">
+          {r.branches.map((b) => (
+            <li class:list={["go-row", { "go-row--closed": b.closed }]}>
+              <div class="go-text">
+                <p class="go-addr">{b.name || r.brand}{b.closed && <span class="go-flag"> · 已关店</span>}</p>
+                {b.address && <p class="go-sub">{b.address}</p>}
+                {b.visitedAt && <p class="go-sub">实吃 <span class="num">{b.visitedAt.replaceAll("-", ".")}</span>{b.score10 != null && <> · <span class="num">{fmtScore(b.score10)}</span></>}</p>}
+              </div>
+              <a class="go-btn go-btn--sm" href={branchNavUrl(r, b)} target="_blank" rel="noopener noreferrer">导航</a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div class="go card">
+          <p class="go-addr">{r.actualCity}{r.branch ? ` · ${r.branch}` : ""}</p>
+          {r.address && <p class="go-sub">{r.address}</p>}
+          <a class="go-btn" href={navUrl(r)} target="_blank" rel="noopener noreferrer">在{navProvider(r)}打开</a>
+        </div>
+      )}
+      <p class="go-note">导航跳转{navProvider(r)}搜索页，不保证精确命中门店</p>
     </section>
-
-    {r.multiShop && (
-      <section class="d-block">
-        <h2 class="section-title">其他分店</h2>
-        <div class="empty">这家店有其他分店，分店信息核实后展示。<br />其他分店 · 未实吃</div>
-      </section>
-    )}
 
     <footer class="d-foot">
       {visited && <p>实吃于 <span class="num">{visited}</span>{r.visitedAtPrecision === "month" && "（月份精度）"}</p>}
@@ -107,5 +123,18 @@ const title = `${r.brand}${r.branch ? " · " + r.branch : ""}`;
   }
   .go-btn:hover { text-decoration: none; opacity: 0.88; }
   .go-note { font-size: var(--fs-sub); color: var(--ink-3); }
+  .d-score { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--s-2) var(--s-6); }
+  .d-price { font-size: var(--fs-sub); color: var(--ink-2); }
+  .d-price .num { font-size: 1.125rem; font-weight: 700; color: var(--ink); }
+  .go-sub { font-size: var(--fs-sub); color: var(--ink-2); }
+  .go-count { font-size: var(--fs-sub); font-weight: 500; color: var(--ink-3); letter-spacing: 0; }
+  /* 多门店：一张发丝线卡内分行，不嵌套圆角子卡 */
+  .go-list { list-style: none; margin: 0; padding: 0 var(--s-4); }
+  .go-row { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); padding: var(--s-4) 0; border-bottom: 1px solid var(--line); }
+  .go-row:last-child { border-bottom: 0; }
+  .go-text { display: grid; gap: 2px; min-width: 0; }
+  .go-row--closed .go-addr { color: var(--ink-3); }
+  .go-flag { color: var(--ink-3); font-weight: 500; }
+  .go-btn--sm { min-height: 40px; padding: 0 var(--s-4); flex: none; }
   .d-foot { display: grid; gap: var(--s-1); color: var(--ink-2); font-size: var(--fs-sub); border-top: 1px solid var(--line); padding-top: var(--s-4); }
 </style>
